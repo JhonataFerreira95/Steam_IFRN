@@ -1,6 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { steamConfig } from './steam.config';
+
+export class SteamService {
+  private apiKey = steamConfig.apiKey;
+
+  constructor(private http: HttpClient) {}
+
+  getSteamData() {
+    const url = https://api.steampowered.com/ISteamUserStats/GetPlayerSummaries/v2/?key=${this.apiKey}&steamids=76561197960435530;
+    return this.http.get(url);
+  }
+}
+
 @Component({
   selector: 'app-api',
   templateUrl: './api.component.html',
@@ -9,8 +22,8 @@ import { HttpClient } from '@angular/common/http';
 export class ApiComponent implements OnInit {
 
   perfil: any;
-  steamId: string = 'https://steamcommunity.com/profiles/76561199156125218'; // 
-  apiKey: string = 'SUA_API_KEY_AQUI'; //
+  steamId: string = '76561199156125218'; 
+  apiKey: string = 'SUA_API_KEY_AQUI';
   baseUrl: string = 'https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/';
 
   constructor(private http: HttpClient) { }
