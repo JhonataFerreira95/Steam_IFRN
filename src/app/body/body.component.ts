@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-;
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-body',
   standalone: true,
-  imports: [], // Importe o BodyComponent aqui
+  imports: [],
   templateUrl: './body.component.html',
-  styleUrls: ['./body.component.css']
+  styleUrl: './body.component.css'
 })
-export class BodyComponent{
+export class BodyComponent {
 
 }
-  
+
