@@ -1,0 +1,21 @@
+/* Defina o corpo e o html para preencher 100% da altura da tela */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* Corpo com flexbox para empurrar o footer para baixo */
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  /* A área de conteúdo ocupa o espaço restante */
+  .content {
+    flex: 1;
+  }
+  
+  app-footer {
+    /* Você pode deixar o footer normal, ou adicionar mais estilos personalizados */
+  }
