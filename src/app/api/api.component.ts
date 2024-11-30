@@ -23,7 +23,7 @@ export class ApiComponent implements OnInit {
 
   perfil: any;
   steamId: string = '76561199156125218'; 
-  apiKey: string = 'SUA_API_KEY_AQUI';
+  apiKey: string = '36753105E0F21430EECA48A8C21C007B';
   baseUrl: string = 'https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/';
 
   constructor(private http: HttpClient) { }
