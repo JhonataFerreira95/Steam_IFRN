@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-float',
+  selector: 'app-fin',
   standalone: true,
   imports: [FormsModule,CommonModule],
   templateUrl: './float.component.html',
