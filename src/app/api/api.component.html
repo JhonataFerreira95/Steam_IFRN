@@ -1,1 +1,8 @@
-<p>api works!</p>
+<div *ngIf="perfil">
+    <h2>Perfil do Jogador</h2>
+    <p><strong>Nome:</strong> {{ perfil.personaname }}</p>
+    <p><strong>Steam ID:</strong> {{ perfil.steamid }}</p>
+    <p><strong>URL do Perfil:</strong> <a [href]="perfil.profileurl" target="_blank">{{ perfil.profileurl }}</a></p>
+    <img [src]="perfil.avatar" alt="Avatar do jogador">
+  </div>
+  
