@@ -8,7 +8,7 @@ import { steamConfig } from './steam.config';
   providedIn: 'root'
 })
 export class SteamService {
-  private apiKey = steamConfig.apiKey;
+  private apiKey = '1DC3944ADB20D3B66C21EB869181143C';
   private baseUrl = 'https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/';
 
   constructor(private http: HttpClient) {}
