@@ -1,0 +1,33 @@
+<div class="input-group mb-3">
+    <span class="input-group-text">Float</span>
+    <span class="input-group-text">0.00</span>
+    <input 
+      type="number" 
+      class="form-control" 
+      aria-label="Digite o valor do float de sua Arma" 
+      [(ngModel)]="inputValue">
+  </div>
+
+<div *ngIf="inputValue > 0.45 && inputValue <= 1" class="alert alert-warning" role="alert">
+    Battle-Scarred (BS)
+</div>
+
+<div *ngIf="inputValue > 0.38 && inputValue <= 0.45" class="alert alert-warning" role="alert">
+    Well-Worn (WW)
+</div>
+
+<div *ngIf="inputValue > 0.15 && inputValue <= 0.38" class="alert alert-warning" role="alert">
+    Field-Tested (FT)
+</div>
+
+<div *ngIf="inputValue > 0.07 && inputValue <= 0.15" class="alert alert-success mt-3" role="alert">
+    Minimal Wear (MW)
+</div>
+
+<div *ngIf="inputValue < 0.07" class="alert alert-primary " role="alert">
+    Novo de fabrica (FN)
+</div>
+
+<div *ngIf="inputValue > 1" class="alert alert-danger mt-3" role="alert">
+    float invalido
+</div>
