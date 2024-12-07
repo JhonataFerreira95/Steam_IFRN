@@ -1,4 +1,4 @@
-<div @if(perfil)>
+<div *ngIf="perfil">
   <h2>Perfil do Jogador</h2>
   <p><strong>Nome:</strong> {{ perfil.personaname }}</p>
   <p><strong>Steam ID:</strong> {{ perfil.steamid }}</p>
