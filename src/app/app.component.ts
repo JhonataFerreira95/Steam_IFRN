@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-root',
   standalone: true,  // Marque o componente como standalone
   imports: [FormsComponent,HeaderComponent, FooterComponent, FloatComponent, CommonModule, ApiComponent],  // Adicione outros componentes aqui se necessário
+
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

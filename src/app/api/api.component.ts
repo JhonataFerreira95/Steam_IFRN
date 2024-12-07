@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { SteamService } from '../api/steam.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-api',
   templateUrl: './api.component.html',
   styleUrls: ['./api.component.css'],
   standalone: true,
-  imports: [HttpClientModule] 
+  imports: [HttpClientModule, CommonModule] 
 })
 export class ApiComponent implements OnInit {
   perfil: any;
