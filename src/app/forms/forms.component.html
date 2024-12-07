@@ -1,23 +1,51 @@
-<div class="form-container">
-    <h2>User Form</h2>
-    <form>
-      <div>
-        <label for="userName">Name:</label>
-        <input id="userName" [(ngModel)]="userName" name="userName" placeholder="Enter your name">
-      </div>
-      <div>
-        <label for="email">Email:</label>
-        <input id="email" [(ngModel)]="email" name="email" placeholder="Enter your email">
-      </div>
-      <div>
-        <button type="submit" (click)="submitForm()">Submit</button>
-      </div>
-    </form>
-  
-    <div *ngIf="submitted">
-      <p><strong>Form Data:</strong></p>
-      <p>Name: {{ userName }}</p>
-      <p>Email: {{ email }}</p>
+<div class="container mt-4">
+  <h2>Formulário de Contato</h2>
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <!-- Nome -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Nome</label>
+      <input 
+        type="text" 
+        id="name" 
+        class="form-control" 
+        placeholder="Digite seu nome" 
+        [(ngModel)]="contact.name" 
+        name="name" 
+        required />
     </div>
-  </div>
-  
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input 
+        type="email" 
+        id="email" 
+        class="form-control" 
+        placeholder="Digite seu email" 
+        [(ngModel)]="contact.email" 
+        name="email" 
+        required />
+    </div>
+
+    <!-- Telefone -->
+    <div class="mb-3">
+      <label for="phone" class="form-label">Telefone</label>
+      <input 
+        type="tel" 
+        id="phone" 
+        class="form-control" 
+        placeholder="Digite seu telefone" 
+        [(ngModel)]="contact.phone" 
+        name="phone" 
+        required />
+    </div>
+
+    <!-- Botão de envio -->
+    <button 
+      type="submit" 
+      class="btn btn-primary" 
+      [disabled]="contactForm.invalid">
+      Enviar
+    </button>
+  </form>
+</div>
