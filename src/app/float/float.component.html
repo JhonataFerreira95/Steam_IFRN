@@ -1,33 +1,44 @@
-<div class="input-group mb-3" style="max-width: 300px;">
-  <span class="input-group-text">Float</span>
-  <span class="input-group-text">0.00</span>
-  <input 
-    type="number" 
-    class="form-control" 
-    aria-label="Digite o valor do float de sua Arma" 
-    [(ngModel)]="inputValue">
-</div>
-
-<div *ngIf="inputValue > 0.45 && inputValue <= 1" class="alert alert-warning" role="alert">
-    Battle-Scarred (BS)
-</div>
-
-<div *ngIf="inputValue > 0.38 && inputValue <= 0.45" class="alert alert-warning" role="alert">
-    Well-Worn (WW)
-</div>
-
-<div *ngIf="inputValue > 0.15 && inputValue <= 0.38" class="alert alert-warning" role="alert">
-    Field-Tested (FT)
-</div>
-
-<div *ngIf="inputValue > 0.07 && inputValue <= 0.15" class="alert alert-success mt-3" role="alert">
-    Minimal Wear (MW)
-</div>
-
-<div *ngIf="inputValue < 0.07" class="alert alert-primary " role="alert">
-    Novo de fabrica (FN)
-</div>
-
-<div *ngIf="inputValue > 1" class="alert alert-danger mt-3" role="alert">
-    float invalido
-</div>
+<div class="container mt-4">
+    <h2>Qualidade da Arma - CS:GO</h2>
+  
+    <!-- Input do valor float -->
+    <div class="mb-3">
+      <label for="floatValue" class="form-label">Digite o valor do Float</label>
+      <input 
+        type="number" 
+        id="floatValue" 
+        class="form-control" 
+        placeholder="Ex: 0.12" 
+        [(ngModel)]="floatValue" 
+        step="0.01"
+        min="0" 
+        max="1">
+    </div>
+  <script></script>
+    <!-- Botão para verificar qualidade -->
+    <button class="btn btn-primary" (click)="checkQuality()">Verificar Qualidade</button>
+  
+    <!-- Modal para Exibir a Qualidade -->
+    <div 
+      class="modal fade" 
+      id="qualityModal" 
+      tabindex="-1" 
+      aria-labelledby="qualityModalLabel" 
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="qualityModalLabel">Qualidade da Arma</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            {{ quality }}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
