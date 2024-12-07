@@ -1,0 +1,49 @@
+/* Card Styling */
+.custom-card {
+    background: linear-gradient(to right, #1b2838, #2a3b4c); /* Gradiente de fundo */
+    color: white; /* Texto branco */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+  }
+  
+  .custom-card .card-body {
+    padding: 20px; /* Mais espaço interno */
+  }
+  
+  .custom-card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00b5e2; /* Cor de destaque para o título */
+  }
+  
+  .custom-card .card-text {
+    font-size: 1rem;
+    color: #d1d1d1; /* Cor de texto mais suave */
+  }
+  
+  .custom-card .btn-link {
+    color: #00b5e2; /* Cor azul clara para o link */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .custom-card .btn-link:hover {
+    color: #ffffff; /* Cor do link no hover */
+    text-decoration: underline; /* Sobrescrever underline ao passar o mouse */
+  }
+  
+  .custom-card img {
+    border-radius: 50%; /* Deixa a imagem do avatar redonda */
+    border: 3px solid #00b5e2; /* Borda azul clara ao redor do avatar */
+  }
+  
+  .d-flex {
+    height: 100vh; /* Faz com que o conteúdo ocupe a tela inteira */
+  }
+  
+  /* Ajuste responsivo para o card */
+  @media (max-width: 576px) {
+    .custom-card {
+      width: 90%; /* Para telas menores, o card fica mais largo */
+    }
+  }
+  

@@ -1,5 +1,26 @@
-/* Estilos adicionais para o header */
-.navbar {
-    margin-bottom: 20px;
-  }
-  
+.navbar-black {
+  background: linear-gradient(to right, #000000, #333333); /* Gradiente de preto para cinza escuro */
+  color: white; /* Texto branco */
+}
+
+.navbar-black .navbar-brand, 
+.navbar-black .nav-link {
+  color: white; /* Links e título com cor branca */
+}
+
+.navbar-black .nav-link:hover {
+  color: #00b5e2; /* Cor de hover para os links, em azul claro */
+}
+
+.navbar-black .dropdown-menu {
+  background: linear-gradient(to right, #000000, #333333); /* Mesmo gradiente para o menu */
+}
+
+.navbar-black .dropdown-item {
+  color: white; /* Itens de menu com texto branco */
+}
+
+.navbar-black .dropdown-item:hover {
+  background-color: #444444; /* Cor de hover no item do menu */
+  color: white; /* Garantir que o texto permaneça branco */
+}
