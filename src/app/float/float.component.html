@@ -19,26 +19,25 @@
     <button class="btn btn-primary" (click)="checkQuality()">Verificar Qualidade</button>
   
     <!-- Modal para Exibir a Qualidade -->
-    <div 
-      class="modal fade" 
-      id="qualityModal" 
-      tabindex="-1" 
-      aria-labelledby="qualityModalLabel" 
-      aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="qualityModalLabel">Qualidade da Arma</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            {{ quality }}
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-          </div>
-        </div>
+<div 
+  class="modal fade" 
+  id="qualityModal" 
+  tabindex="-1" 
+  aria-labelledby="qualityModalLabel" 
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="qualityModalLabel">Qualidade da Arma</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- body da caixa -->
+        {{ quality }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
       </div>
     </div>
   </div>
-  
+</div>

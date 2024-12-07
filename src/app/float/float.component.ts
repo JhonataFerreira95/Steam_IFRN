@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -14,7 +14,9 @@ import { CommonModule } from '@angular/common';
 })
 export class FloatComponent {
   floatValue: number = 0; // Inicializado com 0 para evitar 'null'
-  quality: string = ''; // Qualidade da arma
+  quality: string = 'sdfds'; // Qualidade da arma
+
+  constructor(private cdRef: ChangeDetectorRef) {}
 
   checkQuality(): void {
     if (this.floatValue >= 0 && this.floatValue <= 1) {
@@ -32,10 +34,12 @@ export class FloatComponent {
     } else {
       this.quality = 'Valor inválido! O float deve estar entre 0 e 1.';
     }
-
+    // forçar detecção de mudança
+    this.cdRef.detectChanges();
     // Abrindo o modal
     const modalElement = document.getElementById('qualityModal');
     const modal = new bootstrap.Modal(modalElement);
     modal.show();
+    console.log(this.quality);
   }
 }
