@@ -1,25 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="">Página inicial</a>
-    <button 
-      class="navbar-toggler" 
-      type="button" 
-      data-bs-toggle="collapse" 
-      data-bs-target="#navbarNav" 
-      aria-controls="navbarNav" 
-      aria-expanded="false" 
-      aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/float">Float checker</a>
+          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://steamcommunity.com/dev" target="_blank">API Steam</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/float" routerLinkActive="active">Float Calculator</a></li>
+            <li><a class="dropdown-item" routerLink="/forms">Fale Conosco</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="https://steamcommunity.com/dev">API DA STEAM</a></li>
+          </ul>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
+
+
