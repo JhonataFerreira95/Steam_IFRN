@@ -1,20 +1,17 @@
 /* Estilo geral da página */
 body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(to bottom, #1b2838, #3a4c5f); /* Gradiente em tons escuros */
-  color: #ffffff; /* Cor de texto branca para visibilidade */
+  background-color: #121212; /* Fundo escuro */
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh; /* Ocupa toda a altura da tela */
+  height: 100vh; /* Garantir que o fundo ocupe toda a altura da tela */
 }
+
 
 /* Header */
 header {
   background: #1b2838; /* Cor escura para o cabeçalho */
   color: white;
-  padding: 20px;
+  
   text-align: left;
 }
 
@@ -24,6 +21,13 @@ main {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro translúcido para o conteúdo */
   border-radius: 0px; /* Bordas arredondadas para o conteúdo */
+
+}
+
+html, body {
+  height: 100%; /* Ocupa toda a altura da tela */
+  margin: 0;    /* Remove margens padrões */
+  padding: 0;   /* Remove padding padrões */
 }
 
 /* Espaçamento para simulação de conteúdo */
@@ -67,7 +71,7 @@ img {
 footer {
   background: #1b2838;
   color: white;
-  padding: 20px;
+  margin-top: auto;  /* Empurra o footer para o final da tela */
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
