@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SteamService } from '../api/steam.service';
-import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,7 +7,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './api.component.html',
   styleUrls: ['./api.component.css'],
   standalone: true,
-  imports: [HttpClientModule, CommonModule] 
+  imports: [CommonModule] 
 })
 export class ApiComponent implements OnInit {
   perfil: any;
@@ -20,7 +19,7 @@ export class ApiComponent implements OnInit {
     this.buscarPerfil();
   }
 
-  buscarPerfil(): void {
+buscarPerfil(): void {
     this.steamService.getPlayerSummary(this.steamId).subscribe(
       (resposta) => {
         this.perfil = resposta.response.players[0];
