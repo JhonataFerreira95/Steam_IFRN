@@ -2,8 +2,7 @@
 
 ## Colaboradores
 
-Erick Souza
-Jhonata Santana
+Erick Souza & Jhonata Santana
 
 ## Proposta do projeto
 
@@ -15,7 +14,7 @@ O Angular 18 é uma plataforma e framework para desenvolver aplicações web mod
 
 como instalar:
 
-npm install -g @angular/cli
+npm install -g @angular/cli@18.2
 
 acesse o diretório do projeto, e depois execute o comando:
 
