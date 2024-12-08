@@ -12,7 +12,7 @@ import { BodyComponent } from '../body/body.component';
 })
 export class ApiComponent implements OnInit {
   perfil: any;
-  steamId: string = '76561199156125218';
+  steamId: string = '76561198879116922';
 
   constructor(private steamService: SteamService) {}
 
