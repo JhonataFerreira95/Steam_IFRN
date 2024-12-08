@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { SteamService } from '../api/steam.service';
-import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { BodyComponent } from '../body/body.component';
 
 @Component({
   selector: 'app-api',
   templateUrl: './api.component.html',
   styleUrls: ['./api.component.css'],
   standalone: true,
-  imports: [HttpClientModule, CommonModule] 
+  imports: [CommonModule, BodyComponent] 
 })
 export class ApiComponent implements OnInit {
   perfil: any;
-  steamId: string = '76561199156125218';
+  steamId: string = '76561198879116922';
 
   constructor(private steamService: SteamService) {}
 
