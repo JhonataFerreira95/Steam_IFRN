@@ -9,7 +9,7 @@ import { BodyComponent } from '../body/body.component';
   templateUrl: './api.component.html',
   styleUrls: ['./api.component.css'],
   standalone: true,
-  imports: [CommonModule, BodyComponent] 
+  imports: [HttpClientModule, CommonModule] 
 })
 export class ApiComponent implements OnInit {
   perfil: any;
