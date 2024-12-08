@@ -10,8 +10,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [FormsModule,CommonModule],
   templateUrl: './float.component.html',
-  styleUrl: './float.component.css'
+  styleUrls: ['./float.component.scss']
 })
+
 export class FloatComponent {
   floatValue: number = 0; // Inicializado com 0 para evitar 'null'
   quality: string = 'sdfds'; // Qualidade da arma

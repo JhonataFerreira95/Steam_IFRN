@@ -1,0 +1,54 @@
+// Variável para simular o valor do float
+$floatValue: 0.12;
+
+// Lógica com @if para definir cores baseadas no valor do float
+$modal-background: #ffffff;
+$modal-text-color: #000000;
+
+@if $floatValue <= 0.07 {
+  $modal-background: #c2f0c2; // Verde claro para Factory New
+  $modal-text-color: #0b3d0b; // Texto verde escuro
+} @else if $floatValue > 0.07 and $floatValue <= 0.15 {
+  $modal-background: #d4edda; // Verde médio para Minimal Wear
+  $modal-text-color: #0e4222; // Texto verde escuro
+} @else if $floatValue > 0.15 and $floatValue <= 0.38 {
+  $modal-background: #ffeeba; // Amarelo para Field-Tested
+  $modal-text-color: #5d4301; // Texto marrom escuro
+} @else if $floatValue > 0.38 and $floatValue <= 0.45 {
+  $modal-background: #f5c6cb; // Rosa para Well-Worn
+  $modal-text-color: #62161c; // Texto vermelho escuro
+} @else {
+  $modal-background: #f8d7da; // Vermelho claro para Battle-Scarred
+  $modal-text-color: #5a1315; // Texto vermelho muito escuro
+}
+
+// Aplicando os estilos definidos com @if
+.modal-content {
+  .modal-body {
+    background-color: $modal-background;
+    color: $modal-text-color;
+  }
+
+  .modal-header {
+    background-color: hsl(216, 7%, 14%); // Azul padrão
+    color: #302f2f; // Branco para o título
+  }
+
+  .modal-footer {
+    background-color: #333131; // Fundo cinza claro no rodapé
+    border-top: 1px solid #ddd;
+
+
+  }
+}
+
+@for $i from 1 through 5 {
+    .btn-quality-#{$i} {
+      font-size: (10px + $i);
+      padding: (5px * $i);
+  
+      &:hover {
+        background-color: darken(#007bff, $i * 5%);
+      }
+    }
+  }
