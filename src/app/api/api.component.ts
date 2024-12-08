@@ -6,7 +6,7 @@ import { BodyComponent } from '../body/body.component';
 @Component({
   selector: 'app-api',
   templateUrl: './api.component.html',
-  styleUrls: ['./api.component.css'],
+  styleUrls: ['./api.component.scss'],
   standalone: true,
   imports: [CommonModule, BodyComponent] 
 })

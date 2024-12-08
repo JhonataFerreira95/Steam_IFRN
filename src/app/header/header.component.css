@@ -1,8 +1,7 @@
 .navbar-black {
-  background: linear-gradient(to right, #000000, #333333); /* Gradiente de preto para cinza escuro */
+  background-color: #000000; /* Cor sólida cinza escuro */
   color: white; /* Texto branco */
 }
-
 .navbar-black .navbar-brand, 
 .navbar-black .nav-link {
   color: white; /* Links e título com cor branca */
