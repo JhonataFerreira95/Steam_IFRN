@@ -1,27 +1,39 @@
 # IFRNProjeto
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+## Colaboradores
 
-## Development server
+Erick Souza
+Jhonata Santana
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Proposta do projeto
 
-## Code scaffolding
+A proposta do nosso projeto é focar em fazer um site completo e com funcionalidade para realidade. Não sendo mais um projeto apenas para aprendizado acadêmico. As funcionalidades ainda não foram totalmente desenvolvidas, porém, já temos planos de consumir a API por completo da Steam e back-end com rais ou php. Verificar perfis, ver floats de armas e talvez ganhar algum lucro por meio de anúncios futuramente na aba `Fale conosco`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Angular 18
 
-## Build
+O Angular 18 é uma plataforma e framework para desenvolver aplicações web modernas, utilizando TypeScript como linguagem base. Ele fornece um ecossistema robusto para desenvolvimento de Single Page Applications (SPA).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+como instalar:
 
-## Running unit tests
+npm install -g @angular/cli
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+acesse o diretório do projeto, e depois execute o comando:
 
-## Running end-to-end tests
+ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## cors-anywhere
 
-## Further help
+CORS (Cross-Origin Resource Sharing) é uma política de segurança dos navegadores que impede que requisições sejam feitas a APIs de outros domínios sem permissões específicas.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+O cors-anywhere é um proxy que ajuda a contornar essas restrições temporariamente, permitindo que sua aplicação Angular acesse APIs sem configurações adicionais no servidor.
+
+no terminal, basta clicar no link da proxy para liberar o acesso temporário ao cors-anywhere.
+
+
+## ngx-bootstrap
+
+O ngx-bootstrap fornece componentes Bootstrap otimizados para Angular. Ele facilita a integração de elementos do Bootstrap, como modais, carrosséis, e alertas, diretamente em sua aplicação Angular.
+
+Como instalar ngx-bootstrap:
+
+npm install ngx-bootstrap
