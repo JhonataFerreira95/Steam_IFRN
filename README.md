@@ -2,8 +2,7 @@
 
 ## Colaboradores
 
-Erick Souza
-Jhonata Santana
+Erick Souza & Jhonata Santana
 
 ## Proposta do projeto
 
