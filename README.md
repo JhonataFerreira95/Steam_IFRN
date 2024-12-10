@@ -12,9 +12,10 @@ A proposta do nosso projeto é focar em fazer um site completo e com funcionalid
 
 O Angular 18 é uma plataforma e framework para desenvolver aplicações web modernas, utilizando TypeScript como linguagem base. Ele fornece um ecossistema robusto para desenvolvimento de Single Page Applications (SPA).
 
-como instalar:
-
-npm install -g @angular/cli@18.2
+- **como instalar**:
+   execute o comando:
+   ```bash
+   npm install -g @angular/cli@18.2
 
 acesse o diretório do projeto, e depois execute o comando:
 
