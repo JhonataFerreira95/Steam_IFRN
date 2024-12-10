@@ -34,6 +34,6 @@ no terminal, basta clicar no link da proxy para liberar o acesso temporário ao 
 
 O ngx-bootstrap fornece componentes Bootstrap otimizados para Angular. Ele facilita a integração de elementos do Bootstrap, como modais, carrosséis, e alertas, diretamente em sua aplicação Angular.
 
-Como instalar ngx-bootstrap:
-
-npm install ngx-bootstrap
+- **Como instalar ngx-bootstrap**:
+  ```bash
+  npm install ngx-bootstrap
