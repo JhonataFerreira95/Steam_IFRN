@@ -2,14 +2,19 @@
   <app-header></app-header>
 </header>
 
-<main>
+<main class="text-center">
+  <div *ngFor="let item of [
+        { title: 'Busca', description: 'Busca de perfil' },
+        { title: 'Float', description: 'Verificar floats de skins' }
+      ]" class="mb-4">
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.description }}</p>
+  </div>
+
   <router-outlet></router-outlet>
-  <a href="#top" class="btn btn-primary back-to-top">Voltar ao topo</a>
-  
+  <a href="#top" class="btn btn-secondary back-to-top">Voltar ao topo</a>
 </main>
-<!-- Botão para voltar ao topo -->
 
 <footer>
-  <app-footer class="bg-dark text-light text-center py-4 mt-5" ></app-footer>
+  <app-footer class="bg-dark text-light text-center py-4 mt-5"></app-footer>
 </footer>
- 
