@@ -23,6 +23,9 @@ export class FormsComponent {
   
     // Método para processar o envio do formulário
     onSubmit() {
+      const modal = new bootstrap.Modal(document.getElementById('contactModal')!);
+      modal.show();
+
       // Adiciona o contato atual ao array
       this.contactList.push({ ...this.contact });
   
@@ -30,10 +33,19 @@ export class FormsComponent {
       console.log(this.contactList);
   
       // Limpa os campos do formulário
+
+     
+      // Abrir o modal
+
+      
       this.contact = {
         name: '',
         email: '',
         phone: ''
       };
+      setTimeout(() => {
+        const modal = new bootstrap.Modal(document.getElementById('contactModal')!);
+        modal.show();
+      }, 200); 
     }
   }
