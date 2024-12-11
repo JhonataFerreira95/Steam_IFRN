@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SteamService } from '../api/steam.service';
 import { CommonModule } from '@angular/common';
 import { BodyComponent } from '../body/body.component';
+import { error } from 'node:console';
 
 @Component({
   selector: 'app-api',
@@ -21,14 +22,19 @@ export class ApiComponent implements OnInit {
   }
 
   buscarPerfil(): void {
-    this.steamService.getPlayerSummary(this.steamId).subscribe(
-      (resposta) => {
+    this.steamService.getPlayerSummary(this.steamId).subscribe({
+      next: (resposta) => {
         this.perfil = resposta.response.players[0];
         console.log(this.perfil);
-      },
-      (erro) => {
+      },   error:(erro) => {
         console.error('Erro ao buscar perfil', erro);
-      }
+      },
+      complete: () =>{
+        console.log("100")
+      },
+    }
+    
+     
     );
   }
 }
