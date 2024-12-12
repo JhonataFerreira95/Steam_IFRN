@@ -19,7 +19,10 @@ O Angular 18 é uma plataforma e framework para desenvolver aplicações web mod
 
 acesse o diretório do projeto, e depois execute o comando:
 
-ng serve
+- **Iniciar o servidor**:
+   execute o comando:
+   ```bash
+   ng serve
 
 ## cors-anywhere
 
