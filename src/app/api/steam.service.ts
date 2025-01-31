@@ -8,7 +8,7 @@ import { steamConfig } from './steam.config';
   providedIn: 'root'
 })
 export class SteamService {
-  private apiKey = '1DC3944ADB20D3B66C21EB869181143C';
+  private apiKey = '9B56A5340BB6E2396DA056F47EA7C464';
   private baseUrl = 'https://cors-anywhere.herokuapp.com/https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/';
 
 
