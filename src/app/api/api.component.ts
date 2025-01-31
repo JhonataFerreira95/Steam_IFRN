@@ -1,40 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SteamService } from '../api/steam.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'; // <--- Importe o FormsModule
 import { BodyComponent } from '../body/body.component';
-import { error } from 'node:console';
 
 @Component({
   selector: 'app-api',
   templateUrl: './api.component.html',
   styleUrls: ['./api.component.scss'],
   standalone: true,
-  imports: [CommonModule, BodyComponent] 
+  imports: [CommonModule, BodyComponent, FormsModule], // <--- Adicione FormsModule
 })
-export class ApiComponent implements OnInit {
-  perfil: any;
-  steamId: string = '76561198879116922';
+export class ApiComponent {
+  perfil: any; // Armazena os dados do perfil
+  steamId: string = ''; // Steam ID digitado pelo usuário
 
   constructor(private steamService: SteamService) {}
 
-  ngOnInit(): void {
-    this.buscarPerfil();
-  }
-
+  // Método para buscar o perfil
   buscarPerfil(): void {
+    if (!this.steamId) {
+      console.error('Steam ID não pode ser vazio.');
+      return;
+    }
+
     this.steamService.getPlayerSummary(this.steamId).subscribe({
       next: (resposta) => {
-        this.perfil = resposta.response.players[0];
-        console.log(this.perfil);
-      },   error:(erro) => {
-        console.error('Erro ao buscar perfil', erro);
+        if (resposta.response.players.length > 0) {
+          this.perfil = resposta.response.players[0];
+          console.log('Perfil encontrado:', this.perfil);
+        } else {
+          console.error('Nenhum perfil encontrado para o Steam ID:', this.steamId);
+          this.perfil = null; // Limpa o perfil se não for encontrado
+        }
       },
-      complete: () =>{
-        console.log("100")
+      error: (erro) => {
+        console.error('Erro ao buscar perfil:', erro);
+        this.perfil = null; // Limpa o perfil em caso de erro
       },
-    }
-    
-     
-    );
+    });
   }
 }

@@ -1,4 +1,4 @@
 export const steamConfig = {
-    apiKey: '1DC3944ADB20D3B66C21EB869181143C'
+    apiKey: '9B56A5340BB6E2396DA056F47EA7C464'
   };
   

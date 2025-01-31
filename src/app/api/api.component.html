@@ -1,16 +1,39 @@
 <div><app-body></app-body></div>
+
+<!-- Barra de pesquisa -->
+<div class="d-flex justify-content-center align-items-center mt-3 mb-2">
+  <div class="col-md-4">
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Digite o Steam ID"
+        [(ngModel)]="steamId"
+      />
+      <button class="btn btn-primary" (click)="buscarPerfil()">Buscar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Card do perfil -->
 <div class="d-flex justify-content-center align-items-center">
   <div *ngIf="perfil" class="card custom-card" style="width: 18rem;">
-    <img [src]="perfil.avatar" alt="Avatar do jogador" class="card-img-top" style="width: 100px; height: 100px; object-fit: cover; margin: 0 auto;">
+    <img
+      [src]="perfil.avatarfull"
+      alt="Avatar do jogador"
+      class="card-img-top"
+      style="width: 100px; height: 100px; object-fit: cover; margin: 0 auto;"
+    />
     <div class="card-body text-center">
       <h5 class="card-title">Perfil do Jogador</h5>
       <p class="card-text"><strong>Nome:</strong> {{ perfil.personaname }}</p>
       <p class="card-text"><strong>Steam ID:</strong> {{ perfil.steamid }}</p>
       <p class="card-text">
         <strong>URL do Perfil:</strong>
-        <a [href]="perfil.profileurl" target="_blank" class="btn btn-link">Visitar Perfil</a>
+        <a [href]="perfil.profileurl" target="_blank" class="btn btn-link"
+          >Visitar Perfil</a
+        >
       </p>
     </div>
   </div>
-
 </div>
