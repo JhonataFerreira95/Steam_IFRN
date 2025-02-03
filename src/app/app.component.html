@@ -3,15 +3,7 @@
 </header>
 
 <main class="text-center">
-  <div *ngFor="let item of [
-        { title: 'Busca', description: 'Busca de perfil' },
-        { title: 'Float', description: 'Verificar floats de skins' }
-      ]" class="mb-4">
-    <h3>{{ item.title }}</h3>
-    <p>{{ item.description }}</p>
-  </div>
-
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>
   <a href="#top" class="btn btn-secondary back-to-top">Voltar ao topo</a>
 </main>
 
