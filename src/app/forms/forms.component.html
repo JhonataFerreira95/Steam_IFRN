@@ -65,12 +65,14 @@
           <h5 class="modal-title" id="contactModalLabel">Dados do Contato</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <!-- Exibindo os dados inseridos -->
-          <p><strong>Nome:</strong> {{ contact.name }}</p>  <!-- Exibe o nome -->
-          <p><strong>Email:</strong> {{ contact.email }}</p>  <!-- Exibe o email -->
-          <p><strong>Telefone:</strong> {{ this.contact.phone }}</p>  <!-- Exibe o telefone -->
-        </div>
+        @for (dados of contactList; track $index) {
+          <div class="modal-body">
+            <!-- Exibindo os dados inseridos -->
+            <p><strong>Nome:</strong> {{ dados.name }}</p>  <!-- Exibe o nome -->
+            <p><strong>Email:</strong> {{ dados.email }}</p>  <!-- Exibe o email -->
+            <p><strong>Telefone:</strong> {{ dados.phone }}</p>  <!-- Exibe o telefone -->
+          </div>
+        }
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
         </div>
