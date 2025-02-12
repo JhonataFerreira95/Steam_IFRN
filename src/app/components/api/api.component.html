@@ -18,13 +18,14 @@
 <!-- Card do perfil -->
 <div class="d-flex justify-content-center align-items-center">
   <div *ngIf="perfil" class="card custom-card" style="width: 18rem;">
-    <img
-      [ngSrc]="perfil.avatarfull"
-      alt="Avatar do jogador"
-      class="card-img-top"
-      style="width: 100px; height: 100px; object-fit: cover; margin: 0 auto;"
-      loading="eager"
-    />
+    <img 
+    [ngSrc]="perfil.avatarfull"
+    alt="Avatar do jogador"
+    class="card-img-top"
+    width="60"
+    height="180"
+    loading="eager"
+  /> 
     <div class="card-body text-center">
       <h5 class="card-title">Perfil do Jogador</h5>
       <p class="card-text"><strong>Nome:</strong> {{ perfil.personaname }}</p>

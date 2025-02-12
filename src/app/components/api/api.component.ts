@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { SteamService } from '../../services/steam.service';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { CommonModule} from '@angular/common';
 import { FormsModule } from '@angular/forms'; // <--- Importe o FormsModule
 import { BodyComponent } from '../body/body.component';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-api',

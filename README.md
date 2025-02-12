@@ -26,7 +26,7 @@ acesse o diretório do projeto, e depois execute o comando:
 
 ## cors-anywhere
 - **Iniciar o cors para API**:
-   execute o comando no navegador e faça requisição:
+   execute o comando no navegador e faça:
    ```bash
    https://cors-anywhere.herokuapp.com/corsdemo
 
