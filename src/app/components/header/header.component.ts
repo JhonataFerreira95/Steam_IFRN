@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { FloatComponent } from '../float/float.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsComponent } from '../forms/forms.component';
+import { FormsComponent } from '../../pages/forms/forms.component';
 
 const routes: Routes = [
   { path: 'float', component: FloatComponent },

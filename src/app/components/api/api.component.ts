@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SteamService } from '../api/steam.service';
-import { CommonModule } from '@angular/common';
+import { SteamService } from '../../services/steam.service';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // <--- Importe o FormsModule
 import { BodyComponent } from '../body/body.component';
 
@@ -9,7 +9,7 @@ import { BodyComponent } from '../body/body.component';
   templateUrl: './api.component.html',
   styleUrls: ['./api.component.scss'],
   standalone: true,
-  imports: [CommonModule, BodyComponent, FormsModule], // <--- Adicione FormsModule
+  imports: [CommonModule, BodyComponent, FormsModule, NgOptimizedImage], // <--- Adicione FormsModule
 })
 export class ApiComponent {
   perfil: any; // Armazena os dados do perfil
