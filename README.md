@@ -25,6 +25,10 @@ acesse o diretório do projeto, e depois execute o comando:
    ng serve
 
 ## cors-anywhere
+- **Iniciar o cors para API**:
+   execute o comando no navegador e faça requisição:
+   ```bash
+   https://cors-anywhere.herokuapp.com/corsdemo
 
 CORS (Cross-Origin Resource Sharing) é uma política de segurança dos navegadores que impede que requisições sejam feitas a APIs de outros domínios sem permissões específicas.
 
