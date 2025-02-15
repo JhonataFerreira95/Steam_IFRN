@@ -6,7 +6,7 @@
   color: white; /* Texto branco */
   border-radius: 10px; /* Bordas arredondadas */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
-  margin-top: 10px; /* Espaçamento superior */
+  margin-top: 2px; /* Espaçamento superior */
 }
 
 /* Card Corpo */
@@ -48,12 +48,12 @@
 
 /* Utilitário de Espaçamento Extra */
 .custom-spacing {
-  margin-bottom: 10px;
+  margin-bottom: 1px;
 }
 
 /* Classe de Display Flex para ocupar a tela inteira */
 .d-flex {
-  height: 30vh;
+  height: 68vh;
 }
 
 /* Responsividade e Ajustes para Mobile */
