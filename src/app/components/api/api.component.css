@@ -1,4 +1,5 @@
 
+
 /* Card Container */
 .custom-card {
   background: linear-gradient(to right, #1b2838, #2a3b4c); /* Gradiente de fundo */
@@ -52,7 +53,7 @@
 
 /* Classe de Display Flex para ocupar a tela inteira */
 .d-flex {
-  height: 100vh;
+  height: 30vh;
 }
 
 /* Responsividade e Ajustes para Mobile */

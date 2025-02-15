@@ -1,12 +1,16 @@
+<!-- Div do botão CORS centralizada com menor gap -->
+<div class="d-flex align-items-center justify-content-center gap-1">
+  <span>Antes de fazer a busca, habilite o CORS</span>
+  <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Aqui</a>
+</div>
 
-
-<!-- Barra de pesquisa -->
-<div class="d-flex justify-content-center align-items-center mt-3 mb-2">
+<!-- Barra de pesquisa com margens reduzidas -->
+<div class="d-flex justify-content-center align-items-center mt-2 mb-2">
   <div class="col-md-4">
     <div class="input-group">
       <input
         type="text"
-        class="form-control"
+        class="form-control custom-input"
         placeholder="Digite o Steam ID"
         [(ngModel)]="steamId"
       />
@@ -15,26 +19,24 @@
   </div>
 </div>
 
-<!-- Card do perfil -->
+<!-- Card do perfil com espaçamento padrão -->
 <div class="d-flex justify-content-center align-items-center">
   <div *ngIf="perfil" class="card custom-card" style="width: 18rem;">
     <img 
-    [ngSrc]="perfil.avatarfull"
-    alt="Avatar do jogador"
-    class="card-img-top"
-    width="60"
-    height="180"
-    loading="eager"
-  /> 
+      [ngSrc]="perfil.avatarfull"
+      alt="Avatar do jogador"
+      class="card-img-top"
+      width="60"
+      height="180"
+      loading="eager"
+    /> 
     <div class="card-body text-center">
       <h5 class="card-title">Perfil do Jogador</h5>
       <p class="card-text"><strong>Nome:</strong> {{ perfil.personaname }}</p>
       <p class="card-text"><strong>Steam ID:</strong> {{ perfil.steamid }}</p>
       <p class="card-text">
         <strong>URL do Perfil:</strong>
-        <a [href]="perfil.profileurl" target="_blank" class="btn btn-link"
-          >Visitar Perfil</a
-        >
+        <a [href]="perfil.profileurl" target="_blank" class="btn btn-link">Visitar Perfil</a>
       </p>
     </div>
   </div>
