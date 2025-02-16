@@ -1,38 +1,35 @@
 <nav class="navbar navbar-expand-lg navbar-black">
-
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img #logo src="https://static.vecteezy.com/system/resources/previews/020/336/432/non_2x/steam-logo-steam-icon-free-free-vector.jpg" alt="logo steam" width="50" height="50">IFRN API</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">
+      <img src="https://static.vecteezy.com/system/resources/previews/020/336/432/non_2x/steam-logo-steam-icon-free-free-vector.jpg" alt="logo steam" width="50" height="50">
+      IFRN API
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="">Busca de Perfil</a>
-        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/busca_perfil">Busca de Perfil</a>
+        </li> -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Mais Ferramentas
+            Nossas Ferramentas
           </a>
           <ul class="dropdown-menu">
-            
             <li><a class="dropdown-item" routerLink="/float" routerLinkActive="active">Float Calculator</a></li>
-            <li><a class="dropdown-item" routerLink="/forms">Fale Conosco</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="https://steamcommunity.com/dev">API DA STEAM</a></li>
-
+            <li><a class="dropdown-item" routerLink="/busca_perfil">Cheater Checker</a></li>
           </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="https://steamcommunity.com/dev" target="_blank" rel="noopener noreferrer">API DA STEAM</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/forms">Fale Conosco</a>
         </li>
       </ul>
     </div>
   </div>
-
-  @if (logo) {
-    <img #logo src="https://static.vecteezy.com/system/resources/previews/020/336/432/non_2x/steam-logo-steam-icon-free-free-vector.jpg" alt="logo steam" width="50" height="50">
-  }
-  @else {
-    <h2>indisponivel</h2>
-  }
 </nav>
- 

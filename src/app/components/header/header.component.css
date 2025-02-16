@@ -1,25 +1,58 @@
+/* Estilos para a Navbar com fundo escuro */
 .navbar-black {
-  background-color: #000000; /* Cor sólida cinza escuro */
-  color: white; /* Texto branco */
+  background-color: #000000; /* Fundo preto */
+  color: white;
 }
+
+/* Links e título na navbar */
 .navbar-black .navbar-brand, 
 .navbar-black .nav-link {
-  color: white; /* Links e título com cor branca */
+  color: white;
 }
 
-.navbar-black .nav-link:hover {
-  color: #00b5e2; /* Cor de hover para os links, em azul claro */
+.navbar-black .nav-link:hover,
+.navbar-black .nav-link:focus {
+  color: #00b5e2; /* Azul claro no hover/foco */
+  outline: 2px solid #00b5e2;
+  outline-offset: 2px;
 }
 
+/* Tornando a navbar um contêiner flex para alinhamento adequado */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Espaçamento padrão para o logo dentro do link da marca */
+.navbar-brand img {
+  margin-right: 10px;
+}
+
+/* Estilos para o dropdown (menu suspenso) */
 .navbar-black .dropdown-menu {
-  background: linear-gradient(to right, #000000, #333333); /* Mesmo gradiente para o menu */
+  background: linear-gradient(to right, #000000, #333333);
 }
 
 .navbar-black .dropdown-item {
-  color: white; /* Itens de menu com texto branco */
+  color: white;
 }
 
-.navbar-black .dropdown-item:hover {
-  background-color: #444444; /* Cor de hover no item do menu */
-  color: white; /* Garantir que o texto permaneça branco */
+.navbar-black .dropdown-item:hover,
+.navbar-black .dropdown-item:focus {
+  background-color: #444444;
+  color: white;
+  outline: 2px solid #00b5e2;
+  outline-offset: 2px;
+}
+
+/* Ajustes responsivos para telas menores (mobile) */
+@media screen and (max-width: 576px) {
+  /* Garante que todos os itens da navbar fiquem na mesma linha */
+  .navbar {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  
+ 
 }
