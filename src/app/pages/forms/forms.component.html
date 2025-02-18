@@ -52,23 +52,36 @@
 
   <!-- Modal para exibir os dados inseridos -->
   <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- Centraliza e aumenta a largura -->
       <div class="modal-content">
+        
+        <!-- Cabeçalho do Modal -->
         <div class="modal-header">
           <h5 class="modal-title" id="contactModalLabel">Dados do Contato</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close custom-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        @for (dados of contactList; track $index) {
-          <div class="modal-body">
-            <p><strong>Nome:</strong> {{ dados.name }}</p>
-            <p><strong>Email:</strong> {{ dados.email }}</p>
-            <p><strong>Telefone:</strong> {{ dados.phone }}</p>
+  
+        <!-- Corpo do Modal -->
+        <div class="modal-body">
+          <div class="contact-details">
+            @for (dados of contactList; track $index) {
+              <div class="contact-info">
+                <p><strong>Nome:</strong> {{ dados.name }}</p>
+                <p><strong>Email:</strong> {{ dados.email }}</p>
+                <p><strong>Telefone:</strong> {{ dados.phone }}</p>
+              </div>
+              <hr>
+            }
           </div>
-        }
+        </div>
+  
+        <!-- Rodapé do Modal -->
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
         </div>
+  
       </div>
     </div>
-  </div>
+  </div>  
+  
 </div>
