@@ -11,7 +11,7 @@ export const IMG_CARD: any = [
         id: 2,
         nome:"Erick Souza",
         description: "Viciado em CS, entusiasta do mercado de skins, gamer não tóxico",
-        iconUrl: '',
+        iconUrl: 'https://avatars.githubusercontent.com/u/91682209?v=4',
         github: "https://github.com/ericksouza95"
     },
     

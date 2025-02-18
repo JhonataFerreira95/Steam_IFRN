@@ -80,12 +80,12 @@ html, body {
 /* Retângulo branco no quadrante inferior esquerdo */
 .retangulo-branco {
   width: 40%; /* Ocupa 40% da largura */
-  height: 90vh; /* Ocupa metade da altura da tela */
+  height: 60vh; /* Ocupa metade da altura da tela */
   background-color: transparent;
   border: 0.1px solid var(--color-gray); /* Contorno branco */
   position: absolute; /* Posiciona dentro do body */
   left: 5%;
-  bottom: 10; /* Encosta no final do conteúdo */
+  padding-bottom: 10px; 
 }
 
 
