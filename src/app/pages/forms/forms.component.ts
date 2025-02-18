@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';  // Importando o FormsModule
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { ContactService } from '../../services/contact.service'; // Importando o serviço
+
 
 @Component({
   selector: 'app-forms',
@@ -18,10 +20,7 @@ export class FormsComponent {
     phone: ''
   };
 
-  // Array para armazenar os contatos
-  contactList: any[] = [];
-
-  constructor(private router: Router) {}
+  constructor(private router: Router, private contactService: ContactService) {}
 
   // Método para processar o envio do formulário
   onSubmit() {
@@ -35,11 +34,11 @@ export class FormsComponent {
       modal.show();
     }
 
-    // Adiciona o contato atual ao array
-    this.contactList.push({ ...this.contact });
+    // Adiciona o contato ao serviço
+    this.contactService.addContact(this.contact);
 
-    // Imprime o array atualizado no console
-    console.log(this.contactList);
+    // Imprime a lista de contatos no console
+    console.log(this.contactService.getContacts());
 
     // Limpa os campos do formulário
     this.contact = {
