@@ -1,44 +1,44 @@
 <div class="container mt-4">
   <h2>Fale Conosco</h2>
   <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+
     <!-- Nome -->
-    <div class="mb-3">
-      <label for="name" class="form-label">Nome</label>
+    <div class="input-group input-container">
       <input 
+        class="input" 
+        required 
+        autocomplete="off" 
         type="text" 
-        id="name" 
-        class="form-control" 
-        placeholder="Digite seu nome" 
-        [(ngModel)]="contact.name" 
         name="name" 
-        required />
+        id="name"
+        [(ngModel)]="contact.name">
+      <label class="label" for="name">Nome</label>
     </div>
 
     <!-- Email -->
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
+    <div class="input-group input-container">
       <input 
+        class="input" 
+        required 
+        autocomplete="off" 
         type="email" 
-        id="email" 
-        class="form-control" 
-        placeholder="Digite seu email" 
-        [(ngModel)]="contact.email" 
         name="email" 
-        required />
+        id="email"
+        [(ngModel)]="contact.email">
+      <label class="label" for="email">E-mail</label>
     </div>
 
     <!-- Telefone -->
-    <div class="mb-3">
-      <label for="phone" class="form-label">Telefone</label>
+    <div class="input-group input-container">
       <input 
+        class="input" 
+        required 
+        autocomplete="off" 
         type="tel" 
-        id="phone" 
-        class="form-control" 
-        placeholder="Digite seu telefone" 
-        [(ngModel)]="contact.phone" 
         name="phone" 
-        required />
-        
+        id="phone"
+        [(ngModel)]="contact.phone">
+      <label class="label" for="phone">Telefone</label>
     </div>
 
     <!-- Botão de envio -->
@@ -48,48 +48,40 @@
       [disabled]="contactForm.invalid">
       Enviar
     </button>
-    <br>
-    <br>
-    <br>
-    <br>
   </form>
-  <div 
-    class="modal fade" 
-    id="contactModal" 
-    tabindex="-1" 
-    aria-labelledby="contactModalLabel" 
-    aria-hidden="true">
-    <div class="modal-dialog">
+
+  <!-- Modal para exibir os dados inseridos -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- Centraliza e aumenta a largura -->
       <div class="modal-content">
+        
+        <!-- Cabeçalho do Modal -->
         <div class="modal-header">
           <h5 class="modal-title" id="contactModalLabel">Dados do Contato</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close custom-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        @for (dados of contactList; track $index) {
-          <div class="modal-body">
-            <!-- Exibindo os dados inseridos -->
-            <p><strong>Nome:</strong> {{ dados.name }}</p>  <!-- Exibe o nome -->
-            <p><strong>Email:</strong> {{ dados.email }}</p>  <!-- Exibe o email -->
-            <p><strong>Telefone:</strong> {{ dados.phone }}</p>  <!-- Exibe o telefone -->
+  
+        <!-- Corpo do Modal -->
+        <div class="modal-body">
+          <div class="contact-details">
+            @for (dados of contactList; track $index) {
+              <div class="contact-info">
+                <p><strong>Nome:</strong> {{ dados.name }}</p>
+                <p><strong>Email:</strong> {{ dados.email }}</p>
+                <p><strong>Telefone:</strong> {{ dados.phone }}</p>
+              </div>
+              <hr>
+            }
           </div>
-        }
+        </div>
+  
+        <!-- Rodapé do Modal -->
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
         </div>
+  
       </div>
     </div>
-  </div>
+  </div>  
+  
 </div>
-  <br>
-  <br/>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-

@@ -1,0 +1,18 @@
+<div>
+    <div class="image-title">
+      {{ img_card.nome }}
+    </div>
+  
+    @if(img_card.iconUrl) {
+      <img width="100" alt="Imagem do Card" [src]="img_card.iconUrl">
+    }
+    @else {
+      <h2>Imagem não disponível</h2>
+    }
+  
+    <div class="image-description">
+      {{ img_card.description }}
+    </div>
+  
+  </div>
+  
