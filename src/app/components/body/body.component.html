@@ -55,7 +55,9 @@
                 <div class="img-card-content">
                     <h5>{{ img_card.nome }}</h5>
                     <p>{{ img_card.description }}</p>
-                    <p>{{ img_card.github }}</p>
+                    <a [href]="img_card.github" target="_blank" rel="noopener noreferrer">
+                      {{ img_card.github }}
+                  </a>
                 </div>
             </div>
         }
