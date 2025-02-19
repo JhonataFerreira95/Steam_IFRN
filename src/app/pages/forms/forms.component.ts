@@ -22,6 +22,9 @@ export class FormsComponent {
 
   constructor(private router: Router, private contactService: ContactService) {}
 
+  get contactList() {
+    return this.contactService.getContacts();
+  }
   // Método para processar o envio do formulário
   onSubmit() {
     // Remove backdrops antigos para evitar sobreposição

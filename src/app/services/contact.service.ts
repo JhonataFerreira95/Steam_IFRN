@@ -18,7 +18,7 @@ export class ContactService {
   getContacts() {
     return this.contactList;
   }
-
+//
   // Método para limpar todos os contatos
   clearContacts() {
     this.contactList = [];
