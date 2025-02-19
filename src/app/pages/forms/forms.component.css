@@ -8,19 +8,24 @@
   box-sizing: border-box;
 }
 
-/* Container principal */
+/* Centraliza a div principal */
 .container {
-  text-align: center; /* Centraliza o conteúdo horizontalmente */
-  padding: 20px;
-  min-height: 50vh; /* Garante que ocupe parte da tela */
-}
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que ocupe toda a altura da tela */
+    padding: 20px; /* Adiciona espaçamento interno */
+    width: 100%; /* Ocupa a largura total */
+    max-width: 800px; /* Define uma largura máxima */
+    margin: auto; /* Centraliza horizontalmente */
+  }
 
 /* Estilizando o título */
 h2 {
   font-size: 2rem;
   margin-bottom: 30px;
   color: lightgray;
-  padding-left: 4em; /* Ajustado para evitar desalinhamento */
+  /*padding-left: 4em;  Ajustado para evitar desalinhamento */
 }
 
 body {
@@ -30,9 +35,9 @@ body {
 }
 
 /* Container dos inputs */
-.input-container {
-  padding-left: 6em; /* Padding inicial para desktop */
-}
+/*.input-container {
+  padding-left: 6em;  /*Padding inicial para desktop 
+}*/
 
 /* Estilização do grupo de input */
 .input-group {
@@ -62,7 +67,7 @@ body {
 .label {
   position: absolute;
   top: 1rem;
-  left: 9rem; /* Alinhamento com o container */
+  left: 2rem; /* Alinhamento com o container */
   color: #d4d4d4;
   pointer-events: none;
   transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -78,7 +83,7 @@ body {
   background-color: #1a1a1a;
   padding-inline: 0.3rem;
   color: var(--primary);
-  left: 9rem; /* Mantém o alinhamento com o container */
+  left: 1rem; /* Mantém o alinhamento com o container */
 }
 
 /* Ajustando o botão */
@@ -90,7 +95,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-left: 130px; /* Alinhamento com o container */
+  margin-left: 0px; /* Alinhamento com o container */
 }
 
 button:hover {
@@ -146,9 +151,12 @@ button:hover {
   padding-right: 40px; /* Evita que o botão ultrapasse a margem */
 }
 
+ 
+
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
   .container {
+    max-width: 95%; 
     padding: 10px; /* Reduz o padding do container */
   }
 
@@ -190,6 +198,12 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+
+    .container {
+        max-width: 100%; /* Em celulares, o container ocupa toda a tela */
+        padding: 10px; /* Reduz o padding para otimizar espaço */
+      }
+
   h2 {
     font-size: 1.25rem; /* Reduz ainda mais o tamanho da fonte */
   }
