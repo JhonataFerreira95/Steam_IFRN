@@ -1,13 +1,11 @@
-/* Paleta de cores */
-:root {
-  --color-black: #000000;
-  --color-dark-gray: #333333;
-  --color-gray: #666666;
-  --color-light-gray: #cccccc;
-  --color-white: #ffffff;
-  --color-background: #1a1a1a;
-  --color-primary: #444444;
-  --color-secondary: #888888;
+
+/* Reset básico */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Estilo Global */
@@ -15,16 +13,19 @@ body {
   background-color: var(--color-background);
   color: var(--color-light-gray);
   font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Links */
 a {
   color: var(--color-secondary);
   text-decoration: none;
+  transition: color 0.3s ease, outline 0.3s ease;
 }
+
 a:hover,
 a:focus {
   color: var(--color-light-gray);
@@ -40,8 +41,9 @@ button {
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, outline 0.3s ease;
 }
+
 button:hover,
 button:focus {
   background-color: var(--color-dark-gray);
@@ -50,13 +52,18 @@ button:focus {
 }
 
 /* Inputs, Selects e Textareas */
-input, select, textarea {
+input,
+select,
+textarea {
   background-color: var(--color-dark-gray);
   color: var(--color-light-gray);
-  border: 1px solid var(--color-gray);
+  border: 1px solid var(--color-border);
   border-radius: 4px;
   padding: 8px;
+  width: 100%;
+  transition: border-color 0.3s ease, outline 0.3s ease;
 }
+
 input:focus,
 select:focus,
 textarea:focus {
@@ -64,31 +71,34 @@ textarea:focus {
   border-color: var(--color-light-gray);
 }
 
-
-/* Garante que o body ocupe toda a altura da tela */
-html, body {
-  height: 50%;
-}
-
-/* Contêiner principal que contém os elementos */
+/* Contêiner principal */
 .body-container {
-  position: relative; /* Permite posicionamento absoluto dentro */
-  min-height: 10vh; /* Garante que o conteúdo ocupe toda a tela */
-  padding-bottom: 50px; /* Adiciona espaço extra na parte inferior */
+  flex: 1;
+  position: relative;
+  padding: 20px;
+  padding-bottom: 60px; /* Espaço para o retângulo branco */
 }
 
 /* Retângulo branco no quadrante inferior esquerdo */
+/* Retângulo branco no quadrante inferior esquerdo */
 .retangulo-branco {
-  width: 40%; /* Ocupa 40% da largura */
-  height: 90vh; /* Ocupa metade da altura da tela */
-  background-color: transparent;
-  border: 0.1px solid var(--color-gray); /* Contorno branco */
-  position: absolute; /* Posiciona dentro do body */
+  width: 40%;
+  height: 60vh;
+  background-color: var(--color-background);
+  border: 0.5px solid var(--color-light-gray);
+  position: absolute;
   left: 5%;
-  bottom: 10; /* Encosta no final do conteúdo */
+  bottom: 8em;
 }
 
-
+/* Título "QUEM SOMOS!" */
+.quem-somos {
+  display: none; /* Escondido por padrão no desktop */
+  color: var(--color-white);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 /* Cards */
 .card {
@@ -96,7 +106,7 @@ html, body {
   color: var(--color-light-gray);
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px var(--color-shadow);
 }
 
 /* Seção de Cards */
@@ -114,13 +124,11 @@ html, body {
   color: var(--color-light-gray);
   padding: 15px;
   border-radius: 12px;
-  box-shadow: 5px 5px 15px black;
+  box-shadow: 5px 5px 15px var(--color-black);
   width: 50%;
   margin-left: auto;
-  margin-right: 0;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 15px;
 }
 
@@ -129,7 +137,6 @@ html, body {
   max-width: 100px;
   height: auto;
   border-radius: 10px;
-  margin-left: 0;
 }
 
 /* Estilizando a área de texto dentro do card */
@@ -145,15 +152,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Utilitários */
-.text-center {
-  text-align: center;
-}
-.text-right {
-  text-align: right;
-}
-.text-left {
-  text-align: left;
-}
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
 
 /* Margens e Espaçamentos */
 .mt-1 { margin-top: 5px; }
@@ -168,15 +169,45 @@ h1, h2, h3, h4, h5, h6 {
 .p-2 { padding: 10px; }
 .p-3 { padding: 15px; }
 
-/* Responsividade e Acessibilidade para Mobile */
+/* Container responsivo para o GIF e o texto */
+.api-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilização da imagem GIF */
+.api-container img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* Ajuste do texto para não sair do container */
+.api-text {
+  flex: 1;
+  min-width: 250px;
+  text-align: left;
+}
+
+/* Responsividade */
 @media (max-width: 1024px) {
   .img-card {
     width: 70%;
   }
 
+
   .retangulo-branco {
-    width: 60%;
-    left: 20%;
+    display: none; /* Esconde o retângulo branco em telas menores */
+  }
+
+  .quem-somos {
+    display: block; /* Exibe o título */
   }
 }
 
@@ -199,9 +230,25 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
   }
 
+  .api-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .api-container img {
+    display: none;
+  }
+
+  .api-text {
+    text-align: center;
+  }
+
   .retangulo-branco {
-    width: 80%;
-    left: 10%;
+    display: none; /* Esconde o retângulo branco em telas menores */
+  }
+
+  .quem-somos {
+    display: block; /* Exibe o título */
   }
 }
 
@@ -231,50 +278,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .retangulo-branco {
-    width: 90%;
-    left: 5%;
-    height: auto;
-  }
-}
-
-/* Container responsivo para o GIF e o texto */
-.api-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 15px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Estilização da imagem GIF */
-.api-container img {
-  max-width: 250px;
-  height: auto;
-  border-radius: 10px;
-  flex-shrink: 0;
-}
-
-/* Ajuste do texto para não sair do container */
-.api-text {
-  flex: 1;
-  min-width: 250px;
-  text-align: left;
-}
-
-/* Responsividade para mobile - Esconder GIF */
-@media (max-width: 768px) {
-  .api-container {
-    flex-direction: column;
-    text-align: center;
+    display: none; /* Esconde o retângulo branco em telas menores */
   }
 
-  .api-container img {
-    display: none;
-  }
-
-  .api-text {
-    text-align: center;
+  .quem-somos {
+    display: block; /* Exibe o título */
   }
 }

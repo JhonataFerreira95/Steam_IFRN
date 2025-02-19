@@ -17,7 +17,8 @@ export class FormsComponent {
   contact = {
     name: '',
     email: '',
-    phone: ''
+    phone: '',
+    msg: '',
   };
 
   constructor(private router: Router, private contactService: ContactService) {}
@@ -44,7 +45,8 @@ export class FormsComponent {
     this.contact = {
       name: '',
       email: '',
-      phone: ''
+      phone: '',
+      msg: '',
     };
   }
 

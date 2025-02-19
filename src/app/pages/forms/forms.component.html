@@ -41,6 +41,21 @@
       <label class="label" for="phone">Telefone</label>
     </div>
 
+    
+        <!-- Telefone -->
+        <div class="input-group input-container">
+          <input 
+            class="input" 
+            required 
+            autocomplete="off" 
+            type="tel" 
+            name="phone" 
+            id="phone"
+            [(ngModel)]="contact.msg">
+          <label class="label" for="phone">Deixe sua mensagem</label>
+        </div>
+
+
     <!-- Botão de envio -->
     <button 
       type="submit" 
@@ -58,7 +73,7 @@
         <!-- Cabeçalho do Modal -->
         <div class="modal-header">
           <h5 class="modal-title" id="contactModalLabel">Dados do Contato</h5>
-          <button type="button" class="btn-close custom-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
   
         <!-- Corpo do Modal -->
@@ -75,13 +90,13 @@
           </div>
         </div>
   
-        <!-- Rodapé do Modal -->
+        <!-- Rodapé do Modal com botão à esquerda e vermelho -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-danger close-modal" data-bs-dismiss="modal">Fechar</button>
         </div>
   
       </div>
     </div>
-  </div>  
+  </div>
   
 </div>
