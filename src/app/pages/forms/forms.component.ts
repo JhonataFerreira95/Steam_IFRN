@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';  // Importando o FormsModule
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { ContactService } from '../../services/contact.service'; // Importando o serviço
+
 
 @Component({
   selector: 'app-forms',
@@ -19,11 +21,11 @@ export class FormsComponent {
     msg: '',
   };
 
-  // Array para armazenar os contatos
-  contactList: any[] = [];
+  constructor(private router: Router, private contactService: ContactService) {}
 
-  constructor(private router: Router) {}
-
+  get contactList() {
+    return this.contactService.getContacts();
+  }
   // Método para processar o envio do formulário
   onSubmit() {
     // Remove backdrops antigos para evitar sobreposição
@@ -36,11 +38,11 @@ export class FormsComponent {
       modal.show();
     }
 
-    // Adiciona o contato atual ao array
-    this.contactList.push({ ...this.contact });
+    // Adiciona o contato ao serviço
+    this.contactService.addContact(this.contact);
 
-    // Imprime o array atualizado no console
-    console.log(this.contactList);
+    // Imprime a lista de contatos no console
+    console.log(this.contactService.getContacts());
 
     // Limpa os campos do formulário
     this.contact = {
@@ -51,12 +53,14 @@ export class FormsComponent {
     };
   }
 
-  // Método para fechar o modal
   closeModal(): void {
     const modalElement = document.getElementById('contactModal');
     if (modalElement) {
       const modal = new bootstrap.Modal(modalElement);
       modal.hide();
     }
+  
+    // Chama o serviço para limpar a lista de contatos
+    this.contactService.clearContacts();
   }
 }
