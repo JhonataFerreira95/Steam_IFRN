@@ -1,54 +1,134 @@
 // Variável para simular o valor do float
 $floatValue: 0.12;
 
-// Lógica com @if para definir cores baseadas no valor do float
+// Lógica para definir cores do modal com base no float
 $modal-background: #ffffff;
 $modal-text-color: #000000;
 
 @if $floatValue <= 0.07 {
-  $modal-background: #c2f0c2; // Verde claro para Factory New
+  $modal-background: #c2f0c2; // Factory New - Verde claro
   $modal-text-color: #0b3d0b; // Texto verde escuro
 } @else if $floatValue > 0.07 and $floatValue <= 0.15 {
-  $modal-background: #d4edda; // Verde médio para Minimal Wear
-  $modal-text-color: #0e4222; // Texto verde escuro
+  $modal-background: #d4edda; // Minimal Wear - Verde médio
+  $modal-text-color: #0e4222;
 } @else if $floatValue > 0.15 and $floatValue <= 0.38 {
-  $modal-background: #ffeeba; // Amarelo para Field-Tested
-  $modal-text-color: #5d4301; // Texto marrom escuro
+  $modal-background: #ffeeba; // Field-Tested - Amarelo
+  $modal-text-color: #5d4301;
 } @else if $floatValue > 0.38 and $floatValue <= 0.45 {
-  $modal-background: #f5c6cb; // Rosa para Well-Worn
-  $modal-text-color: #62161c; // Texto vermelho escuro
+  $modal-background: #f5c6cb; // Well-Worn - Rosa
+  $modal-text-color: #62161c;
 } @else {
-  $modal-background: #f8d7da; // Vermelho claro para Battle-Scarred
-  $modal-text-color: #5a1315; // Texto vermelho muito escuro
+  $modal-background: #f8d7da; // Battle-Scarred - Vermelho claro
+  $modal-text-color: #5a1315;
 }
 
-// Aplicando os estilos definidos com @if
+// Aplicação das cores no modal
 .modal-content {
+  max-width: 600px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  .modal-header {
+    background-color: hsl(216, 7%, 14%);
+    color: #ffffff;
+    padding: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+  }
+
   .modal-body {
     background-color: $modal-background;
     color: $modal-text-color;
-  }
-
-  .modal-header {
-    background-color: hsl(216, 7%, 14%); // Azul padrão
-    color: #302f2f; // Branco para o título
+    padding: 20px;
+    text-align: center;
   }
 
   .modal-footer {
-    background-color: #333131; // Fundo cinza claro no rodapé
+    background-color: #333131;
     border-top: 1px solid #ddd;
-
-
+    padding: 10px;
+    text-align: right;
   }
 }
 
+// Centraliza o container e ajusta para telas menores
+.container {
+  padding: 3em 2em 8em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+// Botões de qualidade responsivos
 @for $i from 1 through 5 {
-    .btn-quality-#{$i} {
-      font-size: (10px + $i);
-      padding: (5px * $i);
-  
-      &:hover {
-        background-color: darken(#007bff, $i * 5%);
-      }
+  .btn-quality-#{$i} {
+    font-size: (10px + $i);
+    padding: (5px * $i);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken(#007bff, $i * 5%);
     }
   }
+}
+
+// Responsividade para tablets
+@media (max-width: 1024px) {
+  .modal-content {
+    max-width: 80%;
+  }
+
+  .container {
+    max-width: 90%;
+  }
+}
+
+// Responsividade para celulares médios
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 90%;
+  }
+
+  .container {
+    max-width: 95%;
+    padding: 3em 1em;
+  }
+
+  .modal-body {
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .modal-footer {
+    padding: 8px;
+  }
+}
+
+// Ajustes para celulares pequenos
+@media (max-width: 480px) {
+  .modal-content {
+    max-width: 95%;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 2em 1em;
+  }
+
+  .modal-header {
+    font-size: 1.2rem;
+  }
+
+  .modal-body {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .modal-footer {
+    padding: 6px;
+  }
+}

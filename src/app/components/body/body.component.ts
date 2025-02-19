@@ -6,7 +6,7 @@ import { ImageCard } from '../../models/img-card';
 @Component({
   selector: 'app-body',
   standalone: true,
-  imports: [SobreNosComponent],
+  imports: [],
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.css']
 })

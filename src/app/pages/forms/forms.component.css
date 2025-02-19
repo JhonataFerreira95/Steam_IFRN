@@ -8,17 +8,24 @@
   box-sizing: border-box;
 }
 
-/* Container principal */
-.input-container {
-  padding-left: 6em; /* Padding inicial para desktop */
-}
+/* Centraliza a div principal */
+.container {
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que ocupe toda a altura da tela */
+    padding: 20px; /* Adiciona espaçamento interno */
+    width: 100%; /* Ocupa a largura total */
+    max-width: 800px; /* Define uma largura máxima */
+    margin: auto; /* Centraliza horizontalmente */
+  }
 
 /* Estilizando o título */
 h2 {
   font-size: 2rem;
   margin-bottom: 30px;
-  padding-left: 9rem; /* Alinhamento com o container */
   color: lightgray;
+  /*padding-left: 4em;  Ajustado para evitar desalinhamento */
 }
 
 body {
@@ -27,6 +34,11 @@ body {
   color: #fefefe;
 }
 
+/* Container dos inputs */
+/*.input-container {
+  padding-left: 6em;  /*Padding inicial para desktop 
+}*/
+
 /* Estilização do grupo de input */
 .input-group {
   font-size: 1.25rem;
@@ -34,12 +46,15 @@ body {
   --primary: #2196f3;
   margin-bottom: 20px;
   width: 100%;
+  max-width: 800px; /* Define uma largura máxima para os inputs */
+  margin-left: auto; /* Centraliza o container */
+  margin-right: auto; /* Centraliza o container */
 }
 
 /* Input animado */
 .input {
   all: unset;
-  width: 100%;
+  width: 100%; /* Ocupa 100% da largura do container pai */
   color: #fefefe;
   padding: 0.5em;
   border: 1px solid #9e9e9e;
@@ -52,7 +67,7 @@ body {
 .label {
   position: absolute;
   top: 1rem;
-  left: 9rem; /* Alinhamento com o container */
+  left: 2rem; /* Alinhamento com o container */
   color: #d4d4d4;
   pointer-events: none;
   transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -68,7 +83,7 @@ body {
   background-color: #1a1a1a;
   padding-inline: 0.3rem;
   color: var(--primary);
-  left: 9rem; /* Mantém o alinhamento com o container */
+  left: 1rem; /* Mantém o alinhamento com o container */
 }
 
 /* Ajustando o botão */
@@ -80,7 +95,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-left: 130px; /* Alinhamento com o container */
+  margin-left: 0px; /* Alinhamento com o container */
 }
 
 button:hover {
@@ -89,106 +104,119 @@ button:hover {
 
 /* Estilizando o modal para melhor responsividade */
 .modal-content {
-    max-width: 90%;
-    border-radius: 10px;
-  }
-  
-  .modal-body {
-    max-height: 60vh; /* Evita que o modal fique muito grande */
-    overflow-y: auto; /* Permite rolagem caso o conteúdo ultrapasse a altura */
-  }
-  
-  /* Estilizando os detalhes do contato */
-  .contact-info {
-    text-align: left;
-    padding: 10px;
-    background-color: #4b4747;
-    border-radius: 8px;
-  }
-  
-  .contact-info p {
-    margin: 5px 0;
-    color: #fefefe;
-  }
-  
+  max-width: 50%;
+  border-radius: 10px;
+}
+
+.modal-body {
+  max-height: 60vh; /* Evita que o modal fique muito grande */
+  overflow-y: auto; /* Permite rolagem caso o conteúdo ultrapasse a altura */
+}
+
+/* Estilizando os detalhes do contato */
+.contact-info {
+  text-align: left;
+  padding: 10px;
+  background-color: #4b4747;
+  border-radius: 8px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  color: #fefefe;
+}
+
 /* Estilizando o botão "X" no topo direito do modal */
 .custom-close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: red !important; /* Define a cor vermelha */
-    border-radius: 50%;
-    padding: 8px;
-    width: 20px;
-    height: 20px;
-    opacity: 1; /* Mantém o botão sempre visível */
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Efeito hover para mudar a cor ao passar o mouse */
-  .custom-close-btn:hover {
-    background-color: darkred !important;
-  }
-  
-  /* Mantém o botão dentro do container do modal */
-  .modal-header {
-    position: relative;
-    padding-right: 40px; /* Evita que o botão ultrapasse a margem */
-  }
-  
-/* Responsividade */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red !important; /* Define a cor vermelha */
+  border-radius: 50%;
+  padding: 8px;
+  width: 20px;
+  height: 20px;
+  opacity: 1; /* Mantém o botão sempre visível */
+  transition: background-color 0.3s ease;
+}
+
+/* Efeito hover para mudar a cor ao passar o mouse */
+.custom-close-btn:hover {
+  background-color: darkred !important;
+}
+
+/* Mantém o botão dentro do container do modal */
+.modal-header {
+  position: relative;
+  padding-right: 40px; /* Evita que o botão ultrapasse a margem */
+}
+
+ 
+
+/* Responsividade para telas menores */
 @media (max-width: 768px) {
-  .input-container {
-    padding-left: 2em; /* Reduz o padding para telas menores */
+  .container {
+    max-width: 95%; 
+    padding: 10px; /* Reduz o padding do container */
   }
 
   h2 {
-    padding-left: 2rem; /* Alinhamento com o novo padding */
+    padding-left: 0; /* Remove o padding-left no mobile */
     font-size: 1.5rem; /* Reduz o tamanho da fonte */
   }
 
+  .input-container {
+    padding-left: 0; /* Remove o padding-left no mobile */
+  }
+
+  .input-group {
+    width: 100%; /* Garante que ocupe a largura total */
+    max-width: 100%; /* Remove a largura máxima no mobile */
+  }
+
+  .input {
+    padding-left: 1em; /* Ajusta o padding do input */
+  }
+
   .label {
-    left: 2rem; /* Ajusta o posicionamento do label */
+    left: 1em; /* Alinha o label com o padding do input */
   }
 
   .input:is(:focus, :valid) ~ .label {
-    left: 2rem; /* Mantém o alinhamento com o novo padding */
+    left: 1em; /* Mantém o alinhamento com o padding do input */
   }
 
   button {
-    margin-left: 2rem; /* Alinhamento com o novo padding */
-    width: calc(100% - 4rem); /* Ajusta a largura do botão */
+    margin-left: 0; /* Remove a margem esquerda */
+    width: 100%; /* Ocupa a largura total */
+    text-align: center; /* Centraliza o texto do botão */
   }
 
   .modal-content {
-    width: 95%;
-  }
-
-  .contact-info {
-    padding: 8px;
+    max-width: 90%; /* Aumenta a largura do modal no mobile */
   }
 }
 
 @media (max-width: 480px) {
-  .input-container {
-    padding-left: 1em; /* Padding ainda menor para telas muito pequenas */
-  }
+
+.container {
+        max-width: 100%; /* Em celulares, o container ocupa toda a tela */
+        padding: 10px; /* Reduz o padding para otimizar espaço */
+      }
 
   h2 {
-    padding-left: 1rem; /* Alinhamento com o novo padding */
     font-size: 1.25rem; /* Reduz ainda mais o tamanho da fonte */
   }
 
+  .input {
+    padding-left: 0.5em; /* Ajusta o padding do input */
+  }
+
   .label {
-    left: 2rem; /* Ajusta o posicionamento do label */
+    left: 0.5em; /* Alinha o label com o padding do input */
   }
 
   .input:is(:focus, :valid) ~ .label {
-    left: 1rem; /* Mantém o alinhamento com o novo padding */
-  }
-
-  button {
-    margin-left: 1rem; /* Alinhamento com o novo padding */
-    width: calc(100% - 2rem); /* Ajusta a largura do botão */
+    left: 0.5em; /* Mantém o alinhamento com o padding do input */
   }
 }
