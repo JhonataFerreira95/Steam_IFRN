@@ -53,12 +53,14 @@ export class FormsComponent {
     };
   }
 
-  // Método para fechar o modal
   closeModal(): void {
     const modalElement = document.getElementById('contactModal');
     if (modalElement) {
       const modal = new bootstrap.Modal(modalElement);
       modal.hide();
     }
+  
+    // Chama o serviço para limpar a lista de contatos
+    this.contactService.clearContacts();
   }
 }
