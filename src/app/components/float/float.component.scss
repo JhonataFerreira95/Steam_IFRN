@@ -54,7 +54,7 @@ $modal-text-color: #000000;
 
 // Centraliza o container e ajusta para telas menores
 .container {
-  padding: 3em 2em 8em;
+  padding: 3em 2em;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -73,6 +73,14 @@ $modal-text-color: #000000;
     &:hover {
       background-color: darken(#007bff, $i * 5%);
     }
+  }
+}
+
+.quality-image {
+  img {
+    max-width: 100%;  // Garante que a imagem não ultrapasse a largura do contêiner
+    height: auto;
+    padding-top: 3em;
   }
 }
 

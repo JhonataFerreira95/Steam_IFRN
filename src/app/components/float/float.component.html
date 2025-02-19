@@ -18,6 +18,11 @@
   <!-- Botão para verificar qualidade -->
   <button class="btn btn-primary" (click)="checkQuality()">Verificar Qualidade</button>
 
+  <!-- Nova área para a imagem -->
+  <div class="quality-image mt-2 text-center">
+    <img src="/img/cs01.png" alt="p90" class="img-fluid">
+  </div>
+
   <!-- Modal para Exibir a Qualidade -->
   <div 
     class="modal fade" 
@@ -32,7 +37,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <!-- body da caixa -->
+          <!-- Body da caixa -->
           <p>Valor do Float: {{ floatValue }}</p>
           <p [ngClass]="qualityClass">{{ quality }}</p> <!-- Usando ngClass para definir a cor -->
         </div>
