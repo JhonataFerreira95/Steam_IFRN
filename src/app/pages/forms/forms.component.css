@@ -199,7 +199,7 @@ button:hover {
 
 @media (max-width: 480px) {
 
-    .container {
+.container {
         max-width: 100%; /* Em celulares, o container ocupa toda a tela */
         padding: 10px; /* Reduz o padding para otimizar espaço */
       }

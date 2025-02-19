@@ -15,7 +15,8 @@ export class FormsComponent {
   contact = {
     name: '',
     email: '',
-    phone: ''
+    phone: '',
+    msg: '',
   };
 
   // Array para armazenar os contatos
@@ -45,7 +46,8 @@ export class FormsComponent {
     this.contact = {
       name: '',
       email: '',
-      phone: ''
+      phone: '',
+      msg: '',
     };
   }
 
