@@ -21,6 +21,7 @@ acesse o diretório do projeto, e depois execute o comando:
 
 - **Iniciar o servidor**:
    execute o comando:
+
    ```bash
    ng serve
 
