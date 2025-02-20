@@ -77,19 +77,21 @@ textarea:focus {
   position: relative;
   padding: 20px;
   padding-bottom: 60px; /* Espaço para o retângulo branco */
+  max-width: 1200px;  /* Largura máxima fixa para telas maiores */
+  margin: 0 auto;     /* Centraliza o container horizontalmente */
 }
 
 /* Retângulo branco no quadrante inferior esquerdo */
-/* Retângulo branco no quadrante inferior esquerdo */
 .retangulo-branco {
-  width: 40%;
-  height: 60vh;
+  width: 400px;       /* Largura fixa */
+  height: 400px;      /* Altura fixa */
   background-color: var(--color-background);
-  border: 0.5px solid var(--color-light-gray);
-  position: absolute;
-  left: 5%;
-  bottom: 8em;
+  border: 1px solid var(--color-light-gray);
+  position: absolute; /* Posicionamento absoluto em relação a .body-container */
+  left: 20px;         /* 20px da esquerda do contêiner */
+  bottom: 8em;       /* 20px da parte inferior do contêiner */
 }
+
 
 /* Título "QUEM SOMOS!" */
 .quem-somos {
@@ -195,93 +197,70 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
 
-/* Responsividade */
 @media (max-width: 1024px) {
+  .img-card-container {
+    align-items: center; /* Centraliza os cards no container */
+  }
   .img-card {
     width: 70%;
+    margin: 0 auto; /* Garante que o card fique centralizado */
   }
-
-
   .retangulo-branco {
     display: none; /* Esconde o retângulo branco em telas menores */
   }
-
   .quem-somos {
     display: block; /* Exibe o título */
+    text-align: center;
+    margin: 1em 0;
   }
 }
 
+/* Para telas menores que 768px */
 @media (max-width: 768px) {
   .img-card-container {
     align-items: center;
   }
-
   .img-card {
     width: 90%;
     flex-direction: column;
     text-align: center;
   }
-
   .img-card img {
     margin: 0 auto 10px;
   }
-
   .img-card-content {
     text-align: center;
   }
-
   .api-container {
     flex-direction: column;
     text-align: center;
   }
-
   .api-container img {
-    display: none;
+    display: none; /* Opcional: exiba se preferir esconder a imagem */
   }
-
   .api-text {
     text-align: center;
   }
-
-  .retangulo-branco {
-    display: none; /* Esconde o retângulo branco em telas menores */
-  }
-
-  .quem-somos {
-    display: block; /* Exibe o título */
-  }
 }
 
+/* Para telas menores que 480px */
 @media (max-width: 480px) {
   body {
     padding: 5px;
   }
-
   .card {
     padding: 10px;
   }
-
   .img-card {
     width: 100%;
   }
-
   .img-card img {
     max-width: 80px;
   }
-
   .img-card-content h5 {
-    font-size: 18px;
+    font-size: 1.125rem; /* aproximadamente 18px */
   }
-
   .img-card-content p {
-    font-size: 14px;
-  }
-
-  .retangulo-branco {
-    display: none; /* Esconde o retângulo branco em telas menores */
-  }
-
-  .quem-somos {
-    display: block; /* Exibe o título */
+    font-size: 0.875rem; /* aproximadamente 14px */
   }
 }
