@@ -303,22 +303,92 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Para telas menores que 480px */
 @media (max-width: 480px) {
-  body {
-    padding: 5px;
-  }
-  .card {
-    padding: 10px;
-  }
+
   .img-card {
-    width: 100%;
+    width: 100%; /* Ocupa 100% da largura */
+    flex-direction: column; /* Empilha conteúdo verticalmente */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px; /* Reduz o padding */
+    overflow: hidden; /* Evita que o conteúdo transborde */
+    box-sizing: border-box; /* Inclui padding e borda na largura */
   }
-  .img-card img {
-    max-width: 80px;
+
+  .img-card-content {
+    text-align: center; /* Centraliza o texto */
+    word-wrap: break-word; /* Quebra palavras longas */
+    overflow: hidden; /* Evita que o conteúdo transborde */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+    max-width: 100%; /* Limita a largura do conteúdo */
   }
+
   .img-card-content h5 {
-    font-size: 1.125rem; /* aproximadamente 18px */
+    font-size: 1rem; /* Reduz o tamanho da fonte do título */
   }
+
   .img-card-content p {
-    font-size: 0.875rem; /* aproximadamente 14px */
+    font-size: 0.875rem; /* Reduz o tamanho da fonte do parágrafo */
+    word-wrap: break-word; /* Quebra palavras longas */
+    overflow: hidden; /* Evita que o conteúdo transborde */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+    max-width: 100%; /* Limita a largura do conteúdo */
+  }
+
+  .img-card-content a {
+    font-size: 0.875rem; /* Reduz o tamanho da fonte do link */
+    word-wrap: break-word; /* Quebra palavras longas */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+    max-width: 100%; /* Limita a largura do conteúdo */
   }
 }
+
+/* Para telas menores que 348px */
+@media (max-width: 348px) {
+  .card {
+    width: 100%; /* Ocupa 100% da largura */
+    min-width: 200px; /* Define um tamanho mínimo para o card */
+    padding: 8px; /* Reduz o padding */
+    box-sizing: border-box; /* Inclui padding e borda na largura */
+    overflow: visible; /* Permite que o conteúdo interno seja visível */
+    display: flex; /* Usa flexbox para organizar o conteúdo */
+    flex-direction: column; /* Empilha conteúdo verticalmente */
+  }
+
+  .card-body {
+    padding: 8px; /* Reduz o padding interno */
+    overflow: visible; /* Permite que o conteúdo interno seja visível */
+    flex: 1; /* Ocupa o espaço disponível */
+  }
+
+  .api-container {
+    flex-direction: column; /* Empilha conteúdo verticalmente */
+    text-align: center; /* Centraliza o texto */
+    overflow: visible; /* Permite que o conteúdo interno seja visível */
+  }
+
+  .api-container img {
+    max-width: 100px; /* Reduz ainda mais o tamanho da imagem */
+    margin-bottom: 8px; /* Reduz a margem inferior */
+  }
+
+  .api-text {
+    font-size: 0.75rem; /* Reduz o tamanho da fonte */
+    word-wrap: break-word; /* Quebra palavras longas */
+    min-width: unset; /* Remove a min-width */
+    word-break: break-word; /* Quebra palavras longas */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+    overflow: visible; /* Permite que o texto seja visível */
+    width: 100%; /* Ocupa 100% da largura disponível */
+    max-width: 100%; /* Garante que o texto não ultrapasse os limites do card */
+    flex: 1; /* Mantém o comportamento flexível */
+    text-align: center;
+  }
+
+  .api-text h5 {
+    font-size: 0.875rem; /* Ajusta o tamanho da fonte do título */
+  }
+
+  .api-text p {
+    font-size: 0.85rem; /* Reduz o tamanho da fonte do parágrafo */
+  }
+}
+
