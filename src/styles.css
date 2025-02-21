@@ -1,5 +1,5 @@
 /* Global Styles - style.css */
-
+@import "primeicons/primeicons.css";
 /* Paleta de cores */
 :root {
   --color-black: #000000;
