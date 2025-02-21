@@ -1,5 +1,14 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
+  AUTO_STYLE,
+  AnimationGroupPlayer,
+  AnimationMetadataType,
+  NoopAnimationPlayer,
+  sequence,
+  style,
+  ɵPRE_STYLE
+} from "./chunk-WMKLVU5Z.js";
+import {
   BrowserDomAdapter,
   BrowserModule,
   DomRendererFactory2,
@@ -10,15 +19,6 @@ import {
   HTTP_ROOT_INTERCEPTOR_FNS,
   HttpClientModule
 } from "./chunk-AUVTLKCH.js";
-import {
-  AUTO_STYLE,
-  AnimationGroupPlayer,
-  AnimationMetadataType,
-  NoopAnimationPlayer,
-  sequence,
-  style,
-  ɵPRE_STYLE
-} from "./chunk-WMKLVU5Z.js";
 import {
   DOCUMENT,
   NullViewportScroller,
