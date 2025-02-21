@@ -81,15 +81,73 @@ textarea:focus {
   margin: 0 auto;     /* Centraliza o container horizontalmente */
 }
 
-/* Retângulo branco no quadrante inferior esquerdo */
+/* Retângulo branco */
 .retangulo-branco {
-  width: 400px;       /* Largura fixa */
-  height: 400px;      /* Altura fixa */
+  width: 400px;
+  height: 400px;
   background-color: var(--color-background);
   border: 1px solid var(--color-light-gray);
-  position: absolute; /* Posicionamento absoluto em relação a .body-container */
-  left: 20px;         /* 20px da esquerda do contêiner */
-  bottom: 8em;       /* 20px da parte inferior do contêiner */
+  position: absolute;
+  left: 20px;
+  bottom: 8em;
+  padding: 5px;
+  overflow: hidden;
+  /* Centraliza o conteúdo dentro do retângulo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+}
+
+/* Container centralizado com texto alinhado à esquerda */
+.typewriter-container {
+  width: 80%;           /* Pode ajustar conforme desejado */
+  text-align: left;     /* Garante que o texto fique alinhado à esquerda */
+}
+
+/* Animação de digitação para cada parágrafo */
+.typewriter {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--color-light-gray); /* Cursor */
+  font-size: 1.2rem;
+  width: 0; /* Começa com largura zero */
+}
+
+/* Animação de digitação padrão */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Animação para remover o cursor */
+@keyframes remove-caret {
+  from { border-right-color: var(--color-light-gray); }
+  to { border-right-color: transparent; }
+}
+
+@keyframes blink-caret {
+  from, to { border-right-color: transparent; }
+  50% { border-right-color: var(--color-light-gray); }
+}
+
+/* Primeira frase: sem delay, remove o cursor após 4s */
+.typewriter.first {
+  animation: typing 4s steps(30, end) forwards, 
+             remove-caret 0.1s forwards 4s;
+}
+
+/* Segunda frase: delay de 4s para iniciar e remover o cursor após 8s */
+.typewriter.second {
+  animation: typing 4s steps(30, end) forwards 4s, 
+             remove-caret 0.1s forwards 8s;
+}
+
+/* Terceira frase: delay de 8s para iniciar e remover o cursor após 12s */
+.typewriter.third {
+  animation: typing 4s steps(30, end) forwards 8s, 
+  blink-caret 0.75s step-end infinite 12s;
 }
 
 
