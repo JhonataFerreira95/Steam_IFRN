@@ -1,4 +1,6 @@
-/* Estilos base para a Navbar */
+/* ==================== */
+/* Estilos Base         */
+/* ==================== */
 .navbar-black {
   background-color: #000000; /* Fundo preto */
   color: white;
@@ -30,7 +32,14 @@
   margin-right: 10px; /* Espaçamento entre a imagem e o texto */
 }
 
-/* Estilos para o dropdown (menu suspenso) */
+/* Espaçamento entre os itens da navbar */
+.nav-item {
+  padding-right: 10px;
+}
+
+/* ==================== */
+/* Dropdown (Menu Suspenso) */
+/* ==================== */
 .navbar-black .dropdown-menu {
   background: linear-gradient(to right, #000000, #333333);
   border: none; /* Remove a borda padrão */
@@ -50,7 +59,9 @@
   outline-offset: 2px;
 }
 
-/* Estilos para o botão da toolbar */
+/* ==================== */
+/* Botão da Toolbar     */
+/* ==================== */
 .navbar-toggler {
   background-color: #333333; /* Cor de fundo mais clara */
   border: 1px solid #555555; /* Borda sutil */
@@ -71,11 +82,9 @@
   outline: none; /* Remove o outline padrão */
 }
 
-.nav-item{
-  padding-right: 10px;
-}
-
-/* Ajustes responsivos para telas menores (mobile) */
+/* ==================== */
+/* Responsividade       */
+/* ==================== */
 @media screen and (max-width: 768px) {
   /* Alinhamento e espaçamento no mobile */
   .navbar-black {
@@ -101,10 +110,6 @@
 
   .dropdown-menu {
     background: #000000; /* Fundo sólido para melhor legibilidade */
-  }
-
-  .navbar-toggler {
-    padding: 0.4rem 0.6rem; /* Reduz o padding em telas menores */
   }
 }
 
