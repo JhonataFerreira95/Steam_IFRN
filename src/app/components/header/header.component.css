@@ -71,6 +71,10 @@
   outline: none; /* Remove o outline padrão */
 }
 
+.nav-item{
+  padding-right: 10px;
+}
+
 /* Ajustes responsivos para telas menores (mobile) */
 @media screen and (max-width: 768px) {
   /* Alinhamento e espaçamento no mobile */
