@@ -41,21 +41,19 @@
       <label class="label" for="phone">Telefone</label>
     </div>
 
-    
-        <!-- Telefone -->
-        <div class="input-group input-container">
-          <input 
-            class="input" 
-            required 
-            autocomplete="off" 
-            type="tel" 
-            name="phone" 
-            id="phone"
-            [(ngModel)]="contact.msg">
-          <label class="label" for="phone">Deixe sua mensagem</label>
-        </div>
-
-
+    <!-- Mensagem -->
+    <div class="input-group input-container">
+      <!-- Utilizando um textarea para a mensagem -->
+      <textarea 
+        class="input" 
+        required 
+        autocomplete="off" 
+        name="msg" 
+        id="msg"
+        [(ngModel)]="contact.msg"
+        rows="4"></textarea>
+      <label class="label" for="msg">Deixe sua mensagem</label>
+    </div>
     <!-- Botão de envio -->
     <button 
       type="submit" 
@@ -65,17 +63,16 @@
     </button>
   </form>
 
+
   <!-- Modal para exibir os dados inseridos -->
   <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- Centraliza e aumenta a largura -->
+    <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
-        
         <!-- Cabeçalho do Modal -->
         <div class="modal-header">
           <h5 class="modal-title" id="contactModalLabel">Dados do Contato</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-  
         <!-- Corpo do Modal -->
         <div class="modal-body">
           <div class="contact-details">
@@ -84,19 +81,18 @@
                 <p><strong>Nome:</strong> {{ dados.name }}</p>
                 <p><strong>Email:</strong> {{ dados.email }}</p>
                 <p><strong>Telefone:</strong> {{ dados.phone }}</p>
+                <!-- <p><strong>Mensagem:</strong> {{ dados.msg }}</p> -->
               </div>
               <hr>
             }
           </div>
         </div>
-  
-        <!-- Rodapé do Modal com botão à esquerda e vermelho -->
+        <!-- Rodapé do Modal -->
         <div class="modal-footer">
           <button type="button" class="btn btn-danger close-modal" data-bs-dismiss="modal">Fechar</button>
         </div>
-  
       </div>
     </div>
   </div>
-  
 </div>
+

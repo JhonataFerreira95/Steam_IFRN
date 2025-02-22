@@ -1,15 +1,20 @@
-/* Estilos para a Navbar com fundo escuro */
+/* ==================== */
+/* Estilos Base         */
+/* ==================== */
 .navbar-black {
   background-color: #000000; /* Fundo preto */
   color: white;
+  padding: 0.5rem 1rem; /* Espaçamento interno */
 }
 
 /* Links e título na navbar */
-.navbar-black .navbar-brand, 
+.navbar-black .navbar-brand,
 .navbar-black .nav-link {
   color: white;
+  transition: color 0.3s ease, outline 0.3s ease; /* Transição suave */
 }
 
+.navbar-black .navbar-brand:hover,
 .navbar-black .nav-link:hover,
 .navbar-black .nav-link:focus {
   color: #00b5e2; /* Azul claro no hover/foco */
@@ -17,25 +22,33 @@
   outline-offset: 2px;
 }
 
-/* Tornando a navbar um contêiner flex para alinhamento adequado */
-.navbar {
+/* Alinhamento do logo e texto no navbar-brand */
+.navbar-brand {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-/* Espaçamento padrão para o logo dentro do link da marca */
 .navbar-brand img {
-  margin-right: 10px;
+  margin-right: 10px; /* Espaçamento entre a imagem e o texto */
 }
 
-/* Estilos para o dropdown (menu suspenso) */
+/* Espaçamento entre os itens da navbar */
+.nav-item {
+  padding-right: 10px;
+}
+
+/* ==================== */
+/* Dropdown (Menu Suspenso) */
+/* ==================== */
 .navbar-black .dropdown-menu {
   background: linear-gradient(to right, #000000, #333333);
+  border: none; /* Remove a borda padrão */
 }
 
 .navbar-black .dropdown-item {
   color: white;
+  padding: 0.5rem 1rem; /* Espaçamento interno */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
 }
 
 .navbar-black .dropdown-item:hover,
@@ -46,13 +59,71 @@
   outline-offset: 2px;
 }
 
-/* Ajustes responsivos para telas menores (mobile) */
-@media screen and (max-width: 576px) {
-  /* Garante que todos os itens da navbar fiquem na mesma linha */
-  .navbar {
-    flex-direction: row;
-    flex-wrap: nowrap;
+/* ==================== */
+/* Botão da Toolbar     */
+/* ==================== */
+.navbar-toggler {
+  background-color: #333333; /* Cor de fundo mais clara */
+  border: 1px solid #555555; /* Borda sutil */
+  padding: 0.5rem 0.75rem; /* Espaçamento interno */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transição suave */
+}
+
+/* Ícone do botão da toolbar */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Efeitos de hover e focus no botão */
+.navbar-toggler:hover,
+.navbar-toggler:focus {
+  background-color: #444444; /* Cor de fundo mais clara no hover/focus */
+  border-color: #00b5e2; /* Borda azul no hover/focus */
+  outline: none; /* Remove o outline padrão */
+}
+
+/* ==================== */
+/* Responsividade       */
+/* ==================== */
+@media screen and (max-width: 768px) {
+  /* Alinhamento e espaçamento no mobile */
+  .navbar-black {
+    padding: 0.5rem; /* Reduz o padding */
   }
-  
- 
+
+  .navbar-brand img {
+    width: 40px; /* Reduz o tamanho da imagem */
+    height: 40px;
+  }
+
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem; /* Ajusta o padding do botão de toggle */
+  }
+
+  .navbar-nav {
+    margin-top: 1rem; /* Adiciona espaço acima dos itens da navbar */
+  }
+
+  .nav-item {
+    text-align: center; /* Centraliza os itens no mobile */
+  }
+
+  .dropdown-menu {
+    background: #000000; /* Fundo sólido para melhor legibilidade */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* Ajustes adicionais para telas muito pequenas */
+  .navbar-black {
+    padding: 0.25rem; /* Reduz ainda mais o padding */
+  }
+
+  .navbar-brand span {
+    font-size: 0.9rem; /* Reduz o tamanho da fonte do texto */
+  }
+
+  .nav-link {
+    font-size: 0.9rem; /* Reduz o tamanho da fonte dos links */
+  }
 }

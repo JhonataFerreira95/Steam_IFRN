@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SobreNosComponent } from '../body/sobre-nos/sobre-nos.component';
 import { IMG_CARD } from '../../../db-data';
 import { ImageCard } from '../../models/img-card';
 

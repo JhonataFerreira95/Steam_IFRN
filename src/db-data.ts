@@ -18,7 +18,7 @@ export const IMG_CARD: any = [
     {
         id: 3,
         nome: "Jhonata Ferreira",
-        description: 'estudante do IFRN, Dev BACK-END, como foco em Ruby on rails. Atualmente tentanto desenvolver o FRONT-END com angular.',
+        description: 'Estudante do IFRN, Dev BACK-END, como foco em Ruby on rails. Atualmente tentanto desenvolver o FRONT-END com angular.',
         iconUrl: 'https://avatars.githubusercontent.com/u/87663377?v=4',
         github: 'https://github.com/JhonataFerreira95'
     }

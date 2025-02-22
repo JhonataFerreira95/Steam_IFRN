@@ -7,9 +7,7 @@
 </head>
 
 <body>
-
   <div class="container mt-3 mb-5">
-
     <!-- Cabeçalho -->
     <div class="text-center mt-4 mb-3">
         <h1 class="lead">Explore os recursos da API Steam para integração de jogos e muito mais.</h1>
@@ -20,51 +18,64 @@
   
     <!-- Cards sobre a API -->
     <div class="card shadow-sm mb-5 mx-auto" style="max-width: 800px; width: 100%;">
-        <div class="card-body">
-          <div class="api-container">
-            <!-- Imagem à esquerda -->
-            <img src="https://cdn.cloudflare.steamstatic.com/steamdeck/images/overview_walkingSteam.gif" 
-                 alt="Steam Deck Overview">
-
-
-            <!-- Conteúdo de texto à direita -->
-            <div class="api-text">
-                <h5 class="card-title">Sobre a API Steam</h5>
-                <p class="card-text">
-                    A API Steam oferece uma ampla variedade de funcionalidades, incluindo acesso a informações sobre jogos, rankings, estatísticas e dados do usuário. Ideal para desenvolvedores que desejam integrar recursos da Steam em seus projetos.
-                </p>
-            </div>
+      <div class="card-body">
+        <div class="api-container">
+          <!-- Imagem à esquerda -->
+          <img src="https://cdn.cloudflare.steamstatic.com/steamdeck/images/overview_walkingSteam.gif" 
+               alt="Steam Deck Overview">
+    
+          <!-- Conteúdo de texto à direita -->
+          <div class="api-text">
+            <h5 class="card-title">Sobre a API Steam</h5>
+            <p class="card-text">
+              A API Steam oferece uma ampla variedade de funcionalidades, incluindo acesso a informações sobre jogos, rankings, estatísticas e dados do usuário. Ideal para desenvolvedores que desejam integrar recursos da Steam em seus projetos.
+            </p>
+          </div>
         </div>
-        
-        </div>
-  </div>
-
+      </div>
+    </div>
   
   <div class="body-container">
-    <!-- Outros elementos do body -->
+    <h2 class="quem-somos">Quem Somos!</h2>
+    <div class="retangulo-branco">
+  <div class="typewriter-container">
+    <!-- Primeira frase -->
+    <p class="typewriter first">
+      Olá, bem vindo à API Steam!
+    </p>
+    <!-- Segunda frase -->
+    <p class="typewriter second">
+      Conheça as nossas soluções.
+    </p>
+    <!-- Terceira frase: usando elementos separados para texto e cursor -->
+    <p class="typewriter third">
+      <span class="typewriter-text" style="animation-delay: 8s;">
+        Estamos aqui para ajudá-lo!
+      </span>
+      <span class="cursor" style="animation-delay: 12s;"></span>
+    </p>
+  </div>
+</div>
 
-    <!-- Retângulo branco no quadrante inferior esquerdo -->
-    <div class="retangulo-branco"></div>
-    
 
     <!-- Seção dos Cards -->
     <div class="img-card-container">
-        @for (img_card of imgCards; track $index) {
-            <div class="img-card">
-                <img [src]="img_card.iconUrl" alt="Ícone do card">
-                <div class="img-card-content">
-                    <h5>{{ img_card.nome }}</h5>
-                    <p>{{ img_card.description }}</p>
-                    <a [href]="img_card.github" target="_blank" rel="noopener noreferrer">
-                      {{ img_card.github }}
-                  </a>
-                </div>
-            </div>
-        }
-
-        @empty {
-            <h2>Nenhum conteúdo disponível</h2>
-        }
+      @for (img_card of imgCards; track $index) {
+        <div class="img-card">
+          <img [src]="img_card.iconUrl" alt="Ícone do card">
+          <div class="img-card-content">
+            <h5>{{ img_card.nome }}</h5>
+            <p>{{ img_card.description }}</p>
+            <a [href]="img_card.github" target="_blank" rel="noopener noreferrer">
+              <i class="pi pi-github" style="font-size: 1.5rem; padding-right: 5px;"></i>
+               {{ img_card.github }}
+            </a>
+          </div>
+        </div>
+      }
+      @empty {
+        <h2>Nenhum conteúdo disponível</h2>
+      }
     </div>
 </div>
   

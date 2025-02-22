@@ -18,3 +18,13 @@
     margin: 0 auto;
     height: 900px;
   }
+
+  /* Estilos para os ícones de redes sociais */
+.social-icons a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00b5e2; /* Cor azul no hover */
+}

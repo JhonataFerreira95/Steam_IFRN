@@ -77,19 +77,79 @@ textarea:focus {
   position: relative;
   padding: 20px;
   padding-bottom: 60px; /* Espaço para o retângulo branco */
+  max-width: 1200px;  /* Largura máxima fixa para telas maiores */
+  margin: 0 auto;     /* Centraliza o container horizontalmente */
 }
 
-/* Retângulo branco no quadrante inferior esquerdo */
-/* Retângulo branco no quadrante inferior esquerdo */
+/* Retângulo branco */
 .retangulo-branco {
-  width: 40%;
-  height: 60vh;
+  width: 400px;
+  height: 400px;
   background-color: var(--color-background);
-  border: 0.5px solid var(--color-light-gray);
+  border: 1px solid var(--color-light-gray);
   position: absolute;
-  left: 5%;
+  left: 20px;
   bottom: 8em;
+  padding: 5px;
+  overflow: hidden;
+  /* Centraliza o conteúdo dentro do retângulo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
 }
+
+/* Container centralizado com texto alinhado à esquerda */
+.typewriter-container {
+  width: 80%;           /* Pode ajustar conforme desejado */
+  text-align: left;     /* Garante que o texto fique alinhado à esquerda */
+}
+
+/* Animação de digitação para cada parágrafo */
+.typewriter {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--color-light-gray); /* Cursor */
+  font-size: 1.2rem;
+  width: 0; /* Começa com largura zero */
+}
+
+/* Animação de digitação padrão */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Animação para remover o cursor */
+@keyframes remove-caret {
+  from { border-right-color: var(--color-light-gray); }
+  to { border-right-color: transparent; }
+}
+
+@keyframes blink-caret {
+  from, to { border-right-color: transparent; }
+  50% { border-right-color: var(--color-light-gray); }
+}
+
+/* Primeira frase: sem delay, remove o cursor após 4s */
+.typewriter.first {
+  animation: typing 4s steps(30, end) forwards, 
+             remove-caret 0.1s forwards 4s;
+}
+
+/* Segunda frase: delay de 4s para iniciar e remover o cursor após 8s */
+.typewriter.second {
+  animation: typing 4s steps(30, end) forwards 4s, 
+             remove-caret 0.1s forwards 8s;
+}
+
+/* Terceira frase: delay de 8s para iniciar e remover o cursor após 12s */
+.typewriter.third {
+  animation: typing 4s steps(30, end) forwards 8s, 
+  blink-caret 0.75s step-end infinite 12s;
+}
+
 
 /* Título "QUEM SOMOS!" */
 .quem-somos {
@@ -195,93 +255,140 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
 
-/* Responsividade */
 @media (max-width: 1024px) {
+  .img-card-container {
+    align-items: center; /* Centraliza os cards no container */
+  }
   .img-card {
     width: 70%;
+    margin: 0 auto; /* Garante que o card fique centralizado */
   }
-
-
   .retangulo-branco {
     display: none; /* Esconde o retângulo branco em telas menores */
   }
-
   .quem-somos {
     display: block; /* Exibe o título */
+    text-align: center;
+    margin: 1em 0;
   }
 }
 
+/* Para telas menores que 768px */
 @media (max-width: 768px) {
   .img-card-container {
     align-items: center;
   }
-
   .img-card {
     width: 90%;
     flex-direction: column;
     text-align: center;
   }
-
   .img-card img {
     margin: 0 auto 10px;
   }
-
   .img-card-content {
     text-align: center;
   }
-
   .api-container {
     flex-direction: column;
     text-align: center;
   }
-
   .api-container img {
-    display: none;
+    display: none; /* Opcional: exiba se preferir esconder a imagem */
   }
-
   .api-text {
     text-align: center;
   }
-
-  .retangulo-branco {
-    display: none; /* Esconde o retângulo branco em telas menores */
-  }
-
-  .quem-somos {
-    display: block; /* Exibe o título */
-  }
 }
 
+/* Para telas menores que 480px */
 @media (max-width: 480px) {
-  body {
-    padding: 5px;
-  }
-
-  .card {
-    padding: 10px;
-  }
 
   .img-card {
-    width: 100%;
+    width: 100%; /* Ocupa 100% da largura */
+    flex-direction: column; /* Empilha conteúdo verticalmente */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px; /* Reduz o padding */
+    overflow: hidden; /* Evita que o conteúdo transborde */
+    box-sizing: border-box; /* Inclui padding e borda na largura */
   }
 
-  .img-card img {
-    max-width: 80px;
+  .img-card-content {
+    text-align: center; /* Centraliza o texto */
+    word-wrap: break-word; /* Quebra palavras longas */
+    overflow: hidden; /* Evita que o conteúdo transborde */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+    max-width: 100%; /* Limita a largura do conteúdo */
   }
 
   .img-card-content h5 {
-    font-size: 18px;
+    font-size: 1rem; /* Reduz o tamanho da fonte do título */
   }
 
   .img-card-content p {
-    font-size: 14px;
+    font-size: 0.875rem; /* Reduz o tamanho da fonte do parágrafo */
+    word-wrap: break-word; /* Quebra palavras longas */
+    overflow: hidden; /* Evita que o conteúdo transborde */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+    max-width: 100%; /* Limita a largura do conteúdo */
   }
 
-  .retangulo-branco {
-    display: none; /* Esconde o retângulo branco em telas menores */
-  }
-
-  .quem-somos {
-    display: block; /* Exibe o título */
+  .img-card-content a {
+    font-size: 0.875rem; /* Reduz o tamanho da fonte do link */
+    word-wrap: break-word; /* Quebra palavras longas */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+    max-width: 100%; /* Limita a largura do conteúdo */
   }
 }
+
+/* Para telas menores que 348px */
+@media (max-width: 348px) {
+  .card {
+    width: 100%; /* Ocupa 100% da largura */
+    min-width: 200px; /* Define um tamanho mínimo para o card */
+    padding: 8px; /* Reduz o padding */
+    box-sizing: border-box; /* Inclui padding e borda na largura */
+    overflow: visible; /* Permite que o conteúdo interno seja visível */
+    display: flex; /* Usa flexbox para organizar o conteúdo */
+    flex-direction: column; /* Empilha conteúdo verticalmente */
+  }
+
+  .card-body {
+    padding: 8px; /* Reduz o padding interno */
+    overflow: visible; /* Permite que o conteúdo interno seja visível */
+    flex: 1; /* Ocupa o espaço disponível */
+  }
+
+  .api-container {
+    flex-direction: column; /* Empilha conteúdo verticalmente */
+    text-align: center; /* Centraliza o texto */
+    overflow: visible; /* Permite que o conteúdo interno seja visível */
+  }
+
+  .api-container img {
+    max-width: 100px; /* Reduz ainda mais o tamanho da imagem */
+    margin-bottom: 8px; /* Reduz a margem inferior */
+  }
+
+  .api-text {
+    font-size: 0.75rem; /* Reduz o tamanho da fonte */
+    word-wrap: break-word; /* Quebra palavras longas */
+    min-width: unset; /* Remove a min-width */
+    word-break: break-word; /* Quebra palavras longas */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+    overflow: visible; /* Permite que o texto seja visível */
+    width: 100%; /* Ocupa 100% da largura disponível */
+    max-width: 100%; /* Garante que o texto não ultrapasse os limites do card */
+    flex: 1; /* Mantém o comportamento flexível */
+    text-align: center;
+  }
+
+  .api-text h5 {
+    font-size: 0.875rem; /* Ajusta o tamanho da fonte do título */
+  }
+
+  .api-text p {
+    font-size: 0.85rem; /* Reduz o tamanho da fonte do parágrafo */
+  }
+}
+

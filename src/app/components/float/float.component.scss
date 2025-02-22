@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+
 // Variável para simular o valor do float
 $floatValue: 0.12;
 
@@ -22,7 +24,9 @@ $modal-text-color: #000000;
   $modal-text-color: #5a1315;
 }
 
-// Aplicação das cores no modal
+
+// Estilização dos Modais
+
 .modal-content {
   max-width: 600px;
   margin: auto;
@@ -51,10 +55,15 @@ $modal-text-color: #000000;
     text-align: right;
   }
 }
+ 
+h2 {
+  margin-bottom: 5rem; /* Ajuste o valor conforme necessário */
+}
 
-// Centraliza o container e ajusta para telas menores
+
+// Container Principal
 .container {
-  padding: 3em 2em 8em;
+  padding: 3em 2em;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -62,7 +71,64 @@ $modal-text-color: #000000;
   margin: auto;
 }
 
-// Botões de qualidade responsivos
+// Estilização dos Inputs e Botões (sem animação)
+.input-group {
+  font-size: 1.25rem;
+  position: relative;
+  --primary: #2196f3;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input {
+  all: unset;
+  width: 100%;
+  color: #fefefe;
+  padding: 0.5em;
+  border: 1px solid #9e9e9e;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.label {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  color: #d4d4d4;
+  pointer-events: none;
+}
+
+.input:focus {
+  border: 1px solid var(--primary);
+}
+
+.input:is(:focus, :valid) ~ .label {
+  transform: translateY(-120%) scale(0.7);
+  background-color: #1a1a1a;
+  padding-inline: 0.3rem;
+  color: var(--primary);
+  left: 1rem;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 0;
+}
+
+button:hover {
+  background-color: #1976d2;
+}
+
+
+// Botões de Qualidade Responsivos
 @for $i from 1 through 5 {
   .btn-quality-#{$i} {
     font-size: (10px + $i);
@@ -75,6 +141,19 @@ $modal-text-color: #000000;
     }
   }
 }
+
+
+// Estilização da Área da Imagem
+.quality-image {
+  img {
+    max-width: 100%;  // Garante que a imagem não ultrapasse a largura do contêiner
+    height: auto;
+    padding-top: 3em;
+  }
+}
+
+
+// Media Queries (Modais e Responsividade Geral)
 
 // Responsividade para tablets
 @media (max-width: 1024px) {
@@ -106,6 +185,25 @@ $modal-text-color: #000000;
   .modal-footer {
     padding: 8px;
   }
+  
+  // Ajustes para inputs e botões no mobile
+  .input-group {
+    width: 100%;
+    max-width: 100%;
+  }
+  .input {
+    padding-left: 1em;
+  }
+  .label {
+    left: 1em;
+  }
+  .input:is(:focus, :valid) ~ .label {
+    left: 1em;
+  }
+  button {
+    width: auto;
+    text-align: center;
+  }
 }
 
 // Ajustes para celulares pequenos
@@ -130,5 +228,15 @@ $modal-text-color: #000000;
 
   .modal-footer {
     padding: 6px;
+  }
+  
+  .input {
+    padding-left: 0.5em;
+  }
+  .label {
+    left: 0.5em;
+  }
+  .input:is(:focus, :valid) ~ .label {
+    left: 0.5em;
   }
 }
