@@ -1,5 +1,5 @@
 
-<!-- Div do botão CORS centralizada -->
+<!-- Div do botão CORS -->
 <div class="text-center my-2 mt-2 mb-2">
   <span class="text-center">Antes de usar o cheater checker, habilite o CORS</span>
   <a href="https://cors-anywhere.herokuapp.com/corsdemo" 
@@ -8,30 +8,33 @@
      class="btn btn-primary btn2">Aqui</a>
 </div>
 
-<!-- Barra de pesquisa -->
+<!-- Seção da barra de pesquisa -->
 <div class="container-fluid text-center my-2">
   <div class="mx-auto mt-5 mb-5" style="max-width: 500px;">
     <div class="input-group">
-      <!-- Wrapper para o input com label animado -->
-      <div class="input-wrapper" style="flex: 1;">
+      <!-- Input com label animado -->
+      <div class="input-wrapper flex-grow-1">
         <input
           type="text"
           id="steamId"
           class="input"
-          placeholder=" " 
+          placeholder=" "
           [(ngModel)]="steamId"
         />
         <label for="steamId" class="label">Digite o Steam ID</label>
       </div>
-      <button class="btn btn-primary btn-wide" (click)="buscarPerfil()">Buscar</button>
+      <!-- Botão de busca -->
+      <button class="btn btn-primary btn-wide" (click)="buscarPerfil()">
+        Buscar
+      </button>
     </div>
   </div>
 </div>
 
-
-<!-- Card do perfil: centralizado com d-flex -->
+<!-- Seção do card do perfil -->
 <div class="d-flex justify-content-center align-items-center">
   <div *ngIf="perfil" class="card custom-card" style="width: 18rem;">
+    <!-- Imagem do avatar -->
     <img 
       [ngSrc]="perfil.avatarfull"
       alt="Avatar do jogador"
@@ -39,14 +42,17 @@
       width="60"
       height="180"
       loading="eager"
-    /> 
+    />
+    <!-- Corpo do card -->
     <div class="card-body text-center">
       <h5 class="card-title">Perfil do Jogador</h5>
       <p class="card-text"><strong>Nome:</strong> {{ perfil.personaname }}</p>
       <p class="card-text"><strong>Steam ID:</strong> {{ perfil.steamid }}</p>
       <p class="card-text">
         <strong>URL do Perfil:</strong>
-        <a [href]="perfil.profileurl" target="_blank" class="btn btn-link">Visitar Perfil</a>
+        <a [href]="perfil.profileurl" target="_blank" class="btn btn-link">
+          Visitar Perfil
+        </a>
       </p>
     </div>
   </div>

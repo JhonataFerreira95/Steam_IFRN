@@ -1,33 +1,76 @@
 <nav class="navbar navbar-expand-lg navbar-black">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://static.vecteezy.com/system/resources/previews/020/336/432/non_2x/steam-logo-steam-icon-free-free-vector.jpg" alt="logo steam" width="50" height="50">
-      IFRN API
+    <!-- Brand/Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="https://static.vecteezy.com/system/resources/previews/020/336/432/non_2x/steam-logo-steam-icon-free-free-vector.jpg" 
+           alt="Logo Steam" 
+           width="50" 
+           height="50" 
+           class="me-2"> <!-- Adiciona margem à direita da imagem -->
+      <span>IFRN API</span> <!-- Texto separado -->
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <!-- Botão de Toggle para dispositivos móveis -->
+    <button class="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
+
+    <!-- Itens da Navbar -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <!-- <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/busca_perfil">Busca de Perfil</a>
-        </li> -->
+        <!-- Dropdown "Nossas Ferramentas" -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Nossas Ferramentas
+          <a class="nav-link dropdown-toggle" 
+             href="#" 
+             role="button" 
+             data-bs-toggle="dropdown" 
+             aria-expanded="false">
+             <i class="pi pi-wrench" style="font-size: 1rem; padding-right: 10px;"></i>
+            <span>Nossas Ferramentas</span>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="/float" routerLinkActive="active">Float Calculator</a></li>
-            <li><a class="dropdown-item" routerLink="/busca_perfil">Cheater Checker</a></li>
+            <li>
+              <a class="dropdown-item" 
+                 routerLink="/float" 
+                 routerLinkActive="active">
+                Float Calculator
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" 
+                 routerLink="/busca_perfil">
+                Cheater Checker
+              </a>
+            </li>
           </ul>
         </li>
+
+        <!-- Link para a API da Steam -->
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="https://steamcommunity.com/dev" target="_blank" rel="noopener noreferrer">API DA STEAM</a>
+          <a class="nav-link active" 
+             aria-current="page" 
+             href="https://steamcommunity.com/dev" 
+             target="_blank" 
+             rel="noopener noreferrer">
+             <i class="pi pi-microchip" style="font-size: 1rem; padding-right: 10px;"></i>
+            <span>API DA STEAM</span>
+          </a>
         </li>
+
+        <!-- Link "Fale Conosco" -->
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/forms">Fale Conosco</a>
+          <a class="nav-link" 
+             aria-current="page" 
+             routerLink="/forms">
+             <i class="pi pi-envelope" style="font-size: 1rem; padding-right: 10px;"></i>
+            <span>Fale Conosco</span>
+          </a>
         </li>
       </ul>
     </div>

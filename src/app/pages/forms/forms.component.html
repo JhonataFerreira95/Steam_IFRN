@@ -54,7 +54,6 @@
         rows="4"></textarea>
       <label class="label" for="msg">Deixe sua mensagem</label>
     </div>
-
     <!-- Botão de envio -->
     <button 
       type="submit" 
@@ -63,6 +62,7 @@
       Enviar
     </button>
   </form>
+
 
   <!-- Modal para exibir os dados inseridos -->
   <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
@@ -81,7 +81,7 @@
                 <p><strong>Nome:</strong> {{ dados.name }}</p>
                 <p><strong>Email:</strong> {{ dados.email }}</p>
                 <p><strong>Telefone:</strong> {{ dados.phone }}</p>
-                <p><strong>Mensagem:</strong> {{ dados.msg }}</p>
+                <!-- <p><strong>Mensagem:</strong> {{ dados.msg }}</p> -->
               </div>
               <hr>
             }
@@ -95,3 +95,4 @@
     </div>
   </div>
 </div>
+
