@@ -45,3 +45,11 @@ O ngx-bootstrap fornece componentes Bootstrap otimizados para Angular. Ele facil
 - **Como instalar ngx-bootstrap**:
   ```bash
   npm install ngx-bootstrap
+
+## PrimeIcons
+
+O PrimeIcons é uma coleção de ícones vetoriais, de código aberto, que fazem parte do conjunto de componentes da PrimeFaces (um popular framework para desenvolvimento web com JSF), mas também podem ser usados em qualquer tipo de projeto web. Ele inclui mais de 1.000 ícones, cobrindo uma grande variedade de categorias, como ações, mídia, navegação, interatividade, dados e muitos outros.
+
+- **Como instalar PrimeIcons**:
+  ```bash
+  npm install primeicons --save
