@@ -1,11 +1,12 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-fin',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, NgOptimizedImage],
   templateUrl: './float.component.html',
   styleUrls: ['./float.component.scss']
 })
