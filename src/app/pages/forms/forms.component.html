@@ -15,31 +15,48 @@
       <label class="label" for="name">Nome</label>
     </div>
 
-    <!-- Email -->
-    <div class="input-group input-container">
-      <input 
-        class="input" 
-        required 
-        autocomplete="off" 
-        type="email" 
-        name="email" 
-        id="email"
-        [(ngModel)]="contact.email">
-      <label class="label" for="email">E-mail</label>
-    </div>
+   <!-- Email -->
+<div class="input-group input-container">
+  <input 
+    class="input" 
+    required 
+    autocomplete="off" 
+    type="email" 
+    name="email" 
+    id="email"
+    [(ngModel)]="contact.email"
+    #email="ngModel"
+    pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+  <label class="label" for="email">E-mail</label>
+</div>
 
-    <!-- Telefone -->
-    <div class="input-group input-container">
-      <input 
-        class="input" 
-        required 
-        autocomplete="off" 
-        type="tel" 
-        name="phone" 
-        id="phone"
-        [(ngModel)]="contact.phone">
-      <label class="label" for="phone">Telefone</label>
-    </div>
+<!-- Mensagem de erro caso o email seja inválido -->
+<div *ngIf="email.invalid && email.touched" class="text-danger">
+  <small *ngIf="email.errors?.['required']">O campo e-mail é obrigatório.</small>
+  <small *ngIf="email.errors?.['pattern']">Digite um endereço de e-mail válido.</small>
+</div>
+
+   <!-- Telefone -->
+<div class="input-group input-container">
+  <input 
+    class="input" 
+    required 
+    autocomplete="off" 
+    type="tel" 
+    name="phone" 
+    id="phone"
+    [(ngModel)]="contact.phone"
+    #phone="ngModel"
+    pattern="^\(?\d{2}\)?[\s-]?\d{4,5}-?\d{4}$">
+  <label class="label" for="phone">Telefone</label>
+</div>
+
+<!-- Mensagem de erro caso o telefone seja inválido -->
+<div *ngIf="phone.invalid && phone.touched" class="text-danger">
+  <small *ngIf="phone.errors?.['required']">O campo telefone é obrigatório.</small>
+  <small *ngIf="phone.errors?.['pattern']">Digite um número de telefone válido.</small>
+</div>
+
 
     <!-- Mensagem -->
     <div class="input-group input-container">
