@@ -15,7 +15,7 @@ O Angular 19 é uma plataforma e framework para desenvolver aplicações web mod
 - **como instalar**:
    execute o comando:
    ```bash
-   npm install -g @angular/cli@19.1.8
+   npm install -g @angular/cli@19.1
 
 acesse o diretório do projeto, e depois execute o comando:
 
