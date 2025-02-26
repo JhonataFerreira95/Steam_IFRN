@@ -8,14 +8,14 @@ Erick Souza, Jhonata Santana & Klingher.
 
 A proposta do nosso projeto é focar em fazer um site completo e com funcionalidade para realidade. Não sendo mais um projeto apenas para aprendizado acadêmico. As funcionalidades ainda não foram totalmente desenvolvidas, porém, já temos planos de consumir a API por completo da Steam e back-end com rais ou php. Verificar perfis, ver floats de armas e talvez ganhar algum lucro por meio de anúncios futuramente na aba `Fale conosco`.
 
-## Angular 18
+## Angular 19
 
-O Angular 18 é uma plataforma e framework para desenvolver aplicações web modernas, utilizando TypeScript como linguagem base. Ele fornece um ecossistema robusto para desenvolvimento de Single Page Applications (SPA).
+O Angular 19 é uma plataforma e framework para desenvolver aplicações web modernas, utilizando TypeScript como linguagem base. Ele fornece um ecossistema robusto para desenvolvimento de Single Page Applications (SPA).
 
 - **como instalar**:
    execute o comando:
    ```bash
-   npm install -g @angular/cli@18.2.13
+   npm install -g @angular/cli@19.1.8
 
 acesse o diretório do projeto, e depois execute o comando:
 
